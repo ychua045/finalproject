@@ -1,0 +1,263 @@
+/*style.css*/
+
+body {
+	background: #292727;
+	padding: 0px;
+	margin: 0px;
+	font-family: 'Inter', Lato;
+	text-align: center;
+	font-size: 35px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: normal;
+	min-width: 1000px;
+}
+
+#header {
+	top:0;
+    padding: 0;
+    background: #121212;
+    position: fixed;
+    width: 100%;
+    display: inline-block;
+/*    text-align: center; /* To center the content horizontally */*/
+    z-index: 1000;
+    box-shadow: 1px 6px 19px -2px rgba(0, 0, 0, 0.64);
+    -webkit-box-shadow: 1px 6px 19px -2px rgba(0, 0, 0, 0.64);
+    -moz-box-shadow: 1px 6px 19px -2px rgba(0, 0, 0, 0.64);
+}
+
+#header > div {
+    width: 100%;
+    max-width: 1300px;
+    margin: 0 auto; /* Center the content horizontally */
+    padding: 0 50px; /* Add padding to achieve the same effect as justify-content: space-between */
+    display: block; /* Use a block-level element instead of flex */
+    text-align: justify; /* Spread items across the width */
+}
+
+#header > div::after {
+    content: '';
+    display: inline-block;
+    width: 100%;
+}
+
+
+.main-container {
+	width: 100%;
+	margin: auto;
+  	text-align: center;
+}
+
+#logo {
+/*	width: 45%;*/
+	float: left;
+	margin: 0 auto;
+}
+
+#top-right {
+/*	width: 39%;*/
+	float: right;
+	margin-top: 20px;
+}
+
+.nav-home {
+    text-align: right; /* Align the content to the right */
+/*    display: inline-block; /* Make it an inline block */*/
+/*    vertical-align: top; /* Align items to the top */*/
+    margin-right: 35px; /* Create a gap by setting the right margin */
+    padding-top: 20px;
+}
+
+
+ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+}
+
+ul li {
+	display: inline; /* Display list items horizontally */
+    margin-right: 15px; /* Add spacing between list items */
+}
+
+li a {
+	text-decoration: none !important;
+	color: #9D9D9D;
+	font-family: Inter;
+	font-size: 15px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: normal;
+	background: none !important;
+	padding: 0 !important;
+}
+
+/* Change the link color to #111 (black) on hover */
+li a:hover {
+	color: #FFF;
+}
+
+
+li a:active {
+	color: #FFF;
+}
+
+.container-home {
+/*    height: 750px;*/
+    background-color: #292727; /* Set background color instead of an image */
+    background-size: cover;
+    padding: 66px 0; /* Create a gap using padding */
+    text-align: left; /* Align the items to the left (start) */
+}
+
+.poster {
+	width:100%;
+	overflow: hidden;
+}
+
+.poster img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+#footer {
+    background-color: #1f1c24;
+    width: 100%;
+    text-align: center;
+    padding: 10px 0 20px 0;
+}
+
+#footer > div {
+    display: inline-block;
+    margin: 0 6%; /* Adjust the gap as needed */
+}
+
+#footer > div:first-child {
+    margin-left: 0;
+}
+
+#footer > div:last-child {
+    margin-right: 0;
+}
+
+/*#footer {
+  align-items: flex-start;
+  background-color: #45414D;
+  display: inline-flex;
+  gap: 6%;
+  padding: 10px 0 10px 0;
+  position: relative;
+  width: 100%;
+}*/
+
+
+
+
+
+.footersection {
+    width: 250px;
+    text-align: center; /* To center the content vertically and horizontally */
+    position: relative;
+    padding: 0;
+    margin: 0 auto; /* Center the element horizontally */*/
+	line-height: 200px; /* Set the line height to match the height of the section */*/
+
+}
+
+
+#footer .labels {
+	font-family: 'Inter', sans-serif;
+	font-weight: 500;
+	font-size: 15px;
+	color: #A38BD2;
+	text-align: center;
+	letter-spacing: 0;
+	line-height: normal;
+}
+
+
+#footer .wording {
+	font-family: 'Inter', sans-serif;
+	font-weight: 300;
+	font-size: 12px;
+	text-align: center;
+	letter-spacing: 0;
+	color: #dbd3d3;
+	padding-bottom: 0;
+}
+
+#footer a{
+	text-decoration: none;
+	display: block;
+}
+
+
+
+.socials {
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+    text-align: center; /* Center the content horizontally */
+    position: relative;
+/*    height: 20%;*/
+    font-size: 0; /* Remove any white space between inline elements */
+}
+
+/*.socials > * {
+    display: inline-block; /* Display social icons inline */
+/*    margin: 0 5%; /* Adjust the gap as needed */
+}
+
+#movies{
+	width:100%;
+}
+
+table .listings{
+	margin:auto;
+	border-spacing: 2px;
+}
+
+tr .listings{
+	padding: 20px;
+	border-style: none;
+}
+
+
+td img{
+	width:220px;
+	height:350px;
+}
+
+td img:hover{
+
+}
+
+.book-now-btn {
+	border-radius: 10px;
+	background: #A38BD2;
+	display: flex;
+	display: flex;
+	padding: 10px 50px;
+	justify-content: center;
+	align-items: center;
+	gap: 10px;
+}
+
+.book-now-btn:hover {
+	background: transparent;
+  	border: 2px solid #A38BD2;
+  	box-shadow: 0 2px 15px #A38BD2;
+
+}
+
+#labelhead{
+	text-align: left;
+	margin-left: 30px;	
+	color: #A38BD2;
+	font-size: 40px;
+	font-family: 'Inter', sans-serif;
+	font-family: 500;
+}
