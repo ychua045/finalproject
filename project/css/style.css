@@ -1,7 +1,7 @@
 /*style.css*/
 
 body {
-	background: #292727;
+	background: #121212;
 	padding: 0px;
 	margin: 0px;
 	font-family: 'Inter', Lato;
@@ -13,39 +13,28 @@ body {
 	min-width: 1000px;
 }
 
+
 #header {
-	top:0;
-    padding: 0;
-    background: #121212;
-    position: fixed;
-    width: 100%;
-    display: inline-block;
-/*    text-align: center; /* To center the content horizontally */*/
-    z-index: 1000;
-    box-shadow: 1px 6px 19px -2px rgba(0, 0, 0, 0.64);
-    -webkit-box-shadow: 1px 6px 19px -2px rgba(0, 0, 0, 0.64);
-    -moz-box-shadow: 1px 6px 19px -2px rgba(0, 0, 0, 0.64);
-}
-
-#header > div {
-    width: 100%;
-    max-width: 1300px;
-    margin: 0 auto; /* Center the content horizontally */
-    padding: 0 50px; /* Add padding to achieve the same effect as justify-content: space-between */
-    display: block; /* Use a block-level element instead of flex */
-    text-align: justify; /* Spread items across the width */
-}
-
-#header > div::after {
-    content: '';
-    display: inline-block;
-    width: 100%;
+	top: 0;
+	padding: 20px 50px 20px 0px;
+	/*	background: rgba(0, 0, 0, 0.70);*/
+	background: #121212;
+	position: fixed;
+	height: 100px;
+	display: inline-flex;
+	width: 100%;
+	justify-content: space-between;
+	align-items: center;
+	z-index: 1000;
+	box-shadow: 1px 6px 19px -2px rgba(0,0,0,0.64);
+	-webkit-box-shadow: 1px 6px 19px -2px rgba(0,0,0,0.64);
+	-moz-box-shadow: 1px 6px 19px -2px rgba(0,0,0,0.64);
 }
 
 
 .main-container {
 	width: 100%;
-	margin: auto;
+/*	margin: auto;*/
   	text-align: center;
 }
 
@@ -61,12 +50,20 @@ body {
 	margin-top: 20px;
 }
 
+/*.nav {
+	justify-content: flex-start;
+	display: flex;
+	align-items: flex-start;
+	gap: 15px;
+	padding-top: 15px;
+}*/
+
 .nav-home {
-    text-align: right; /* Align the content to the right */
-/*    display: inline-block; /* Make it an inline block */*/
-/*    vertical-align: top; /* Align items to the top */*/
-    margin-right: 35px; /* Create a gap by setting the right margin */
-    padding-top: 20px;
+	justify-content: flex-end;
+	display: flex;
+	align-items: flex-start;
+	gap: 15px;
+	padding-top: 20px;
 }
 
 
@@ -124,7 +121,7 @@ li a:active {
 }
 
 #footer {
-    background-color: #1f1c24;
+    background-color: #000000;
     width: 100%;
     text-align: center;
     padding: 10px 0 20px 0;
@@ -212,7 +209,8 @@ li a:active {
 }
 
 #movies{
-	width:100%;
+	width:80%;
+/*	padding: 0px 50px 0px 50px;*/
 }
 
 table .listings{
@@ -226,18 +224,111 @@ tr .listings{
 }
 
 
-td img{
-	width:220px;
-	height:350px;
+
+
+
+.poster-cont{
+	position: relative;
+	width: 220px; /* Set the width to match the image width */
+	height: 350px; /* Set the height to match the image height */
+	overflow: hidden;
+	transition: .5s ease;
 }
 
-td img:hover{
+.poster-cont img{
+	width: 100%;
+	height: 100%;
+	opacity: 1;
+	display: block;
+	transition: .5s ease;
+	backface-visibility: hidden;
+}
 
+.poster-cont .middle{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: rgba(0, 0, 0, 0.7);
+	opacity: 0;
+	transition: .5s ease;
+}
+
+
+.poster-cont:hover img {
+	opacity: 1;
+}
+
+.poster-cont:hover .middle {
+	opacity: 0.7;
+}
+
+
+.moviecontent{
+	background-color: #292727;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	width: 100%;
+}
+
+
+.moviecontent .framemovie {
+	background-color: #292727;
+	width: 220px;
+	height: 350px;
+}
+
+.framemovie .div {
+  gap: 9px;
+  top: 210px;
+  left: 16px;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: relative;
+}
+
+.framemovie .movielab {
+  position: relative;
+  width: fit-content;
+  margin-top: -1px;
+  font-family: "Inter-SemiBold", Helvetica;
+  font-weight: 600;
+  color: #FFF;
+  font-size: 20px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.framemovie .div-2 {
+  gap: 5px;
+  flex: 0 0 auto;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: relative;
+}
+
+.framemovie .descriptions {
+  position: relative;
+  width: fit-content;
+  font-family: "Inter-Medium", Helvetica;
+  font-weight: 500;
+  color: #fff;
+  font-size: 12px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
 }
 
 .book-now-btn {
 	border-radius: 10px;
-	background: #A38BD2;
+	background: #FFA33C;
 	display: flex;
 	display: flex;
 	padding: 10px 50px;
@@ -248,7 +339,7 @@ td img:hover{
 
 .book-now-btn:hover {
 	background: transparent;
-  	border: 2px solid #A38BD2;
+  	border: 1px solid #FFA33C;
   	box-shadow: 0 2px 15px #A38BD2;
 
 }
@@ -256,8 +347,11 @@ td img:hover{
 #labelhead{
 	text-align: left;
 	margin-left: 30px;	
-	color: #A38BD2;
+	color: #B15EFF;
 	font-size: 40px;
 	font-family: 'Inter', sans-serif;
 	font-family: 500;
 }
+
+
+
