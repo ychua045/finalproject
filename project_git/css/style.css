@@ -125,6 +125,8 @@ li a:active {
     width: 100%;
     text-align: center;
     padding: 10px 0 20px 0;
+    position: relative;
+    bottom:0;
 }
 
 #footer > div {
@@ -355,4 +357,200 @@ tr .listings{
 }
 
 
+
+
+
+#login {
+	margin-top: 50px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	position: relative;
+}
+
+#login form{
+	display: flex;
+	gap: 40px;
+	flex-direction: column;
+}
+
+#login .div {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  position: relative;
+  flex: 0 0 auto;
+}
+
+
+
+#login .loginlabel {
+  position: relative;
+  width: fit-content;
+  margin-top: -1px;
+  font-family: "Inter-Bold", Helvetica;
+  font-weight: 700;
+  color: #b15eff;
+  font-size: 40px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+#login .div-2 {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 30px;
+  position: relative;
+  flex: 0 0 auto;
+}
+
+#login .div-wrapper{
+	display: flex;
+	align-items: center;
+	width: 100%; /* Adjust the width to 100% */
+	gap: 50px;
+	flex-direction: column;
+}
+
+#name, #email, #phone, #card, #password {
+	background: transparent; 
+	border: 2px solid;
+	border-radius: 25px;
+	border-color: #a38bd2;
+	padding: 10px 20px; /* Adjust the padding */
+	color: #FFF;
+	font-family: "Inter", sans-serif;
+	font-size: 20px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: normal;
+	width: 500px; /* Set the width to 100% */
+	height: 60px; /* Adjust the height */
+}
+
+input[type=text]::placeholder, input[type=email]::placeholder, input[type=password]::placeholder{
+	color: #96999B !important;
+	font-family: "Inter", sans-serif;
+	font-size: 16px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: normal;
+}
+
+input:focus {
+	border: 2px solid #B15EFF;
+}
+
+::placeholder {
+	color: #96999B !important;
+	font-family: "Inter", sans-serif;
+	font-size: 16px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: normal;
+}
+
+
+#login .div-3 {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.div-5{
+	display: inline-flex;
+	flex-direction: row;
+	gap: 10%;  
+	align-items: center;
+	position: relative;
+	flex: 0 0 auto;
+	justify-content: center;	
+	padding: 20px;
+}
+
+#login .div-4 {
+	padding:0;
+	margin: 0 auto;
+	display: inline-flex;
+	flex-direction: column;
+	align-items: center;
+	position: relative;
+	flex: 0 0 auto;
+	margin-bottom: 50px;
+}
+
+#login .submit {
+	display: flex;
+	width: 200px;
+	align-items: center;
+	justify-content: center;
+	gap: 15.4px;
+	padding: 10px 20px;
+	position: relative;
+	flex: 0 0 auto;
+	background-color: #ffa33c;
+	border-radius: 20px;
+	overflow: hidden;
+	font-size: 20px;
+	font-family: "Inter-SemiBold", Helvetica;
+	font-weight: 600;
+	border: 1px solid transparent;
+
+}
+
+ .reset {
+	display: flex;
+	width: 200px;
+	align-items: center;
+	justify-content: center;
+	gap: 15.4px;
+	padding: 10px 20px;
+	position: relative;
+	flex: 0 0 auto;
+	background-color: transparent;
+	border-radius: 20px;
+	overflow: hidden;
+	font-size: 20px;
+	font-family: "Inter-SemiBold", Helvetica;
+	font-weight: 600;
+	border: 1px solid #ffa33c;
+	color: #ffa33c;
+
+}
+
+#login button:hover {
+	background: transparent;
+  	border: 1px solid #FFA33C;
+  	color: #FFA33C;
+}
+
+.smalllabel {
+  position: relative;
+  width: fit-content;
+  font-family: "Inter-Regular", Helvetica;
+  font-weight: 400;
+  color: #b15eff;
+  font-size: 13px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.regdesc {
+	padding:0;
+	position: relative;
+	width: fit-content;
+	font-family: "Inter-Regular", Helvetica;
+	font-weight: 400;
+	color: #FFF;
+	font-size: 15px;
+	letter-spacing: 0;
+	line-height: normal;
+	white-space: nowrap;
+	text-align: center;
+}
 
