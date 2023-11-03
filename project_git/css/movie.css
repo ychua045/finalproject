@@ -8,22 +8,23 @@
 	gap: 10px;
 	padding: 61px 200px;
 	position: relative;
-	background-image: url("../image/barbie.jpeg");
-	background-repeat: no-repeat;
-	background-size: cover;
-	background-position: top;
+
 
 }
 
 .moviedetails::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.5); /* Adjust the opacity as needed */
-  z-index: -1;
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-image: url("../image/barbie.jpeg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: top;
+	opacity: 0.5;
+	z-index: -1;
 }
 
 .moviedetails .div {
@@ -41,8 +42,8 @@
 	margin-top: -1px;
 	font-family: "Inter-Bold", Helvetica;
 	font-weight: 700;
-	color: #B15EFF;
-	font-size: 20px;
+	color: #FFFB73;
+	font-size: 25px;
 	letter-spacing: -0.3px;
 	line-height: 45px;
 	white-space: nowrap;
@@ -56,10 +57,10 @@
 	flex: 0 0 auto;
 }
 
-.moviedetails .movieposter {
+.moviedetails img{
 	position: relative;
-	width: 100px;
-	height: 100px;
+	width: 250px;
+	height: 350px;
 }
 
 
@@ -77,9 +78,192 @@
 	width: fit-content;
 	font-family: "Inter-Bold", Helvetica;
 	font-weight: 700;
-	color: #B15EFF;
+	color: #FFFB73;
 	font-size: 15px;
 	letter-spacing: -0.2px;
 	line-height: 30px;
 	white-space: nowrap;
 }
+
+
+.moviedetails .desc {
+	position: relative;
+	width: fit-content;
+	font-family: "Inter-Regular", Helvetica;
+	font-weight: 300;
+	color: #FFFB73;
+	font-size: 15px;
+	letter-spacing: -0.2px;
+	line-height: 30px;
+	white-space: nowrap;
+	display: inline; /* Add this to make it display on the same line */
+
+}
+
+#showtimes{
+	width: 80%;
+	margin: 0 auto; /* Center the container */
+	padding: 0 20px; /* Add margin to the left and right sides */
+	display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    gap: 10%;
+/*	justify-content: center; /* Center the content within the container */*/
+}
+
+table.showtime{
+/*	margin:auto;*/
+/*	padding: 20px 20px 20px 20px;*/
+	border-spacing: 2px;
+	border-collapse: collapse;
+  	margin-bottom: 10%; /* Add margin to create a gap between tables */
+
+}
+
+
+th.showtime {
+	padding: 40px 20px 40px 20px;
+	font-family: "Inter-SemiBold", Helvetica;
+	font-weight: 600;
+	background-color: #B15EFF; !important
+	color: #A38BD2;
+	font-size: 22px;
+	letter-spacing: 0;
+	line-height: normal;
+	white-space: nowrap;	
+	text-align: left;
+}
+
+td.date {
+	padding: 30px 20px 30px 20px;
+	font-family: "Inter-Regular", Helvetica;
+	font-weight: 400;
+	color: #FFF;
+	font-size: 16px;
+	letter-spacing: 0;
+	line-height: normal;
+	white-space: nowrap;
+}
+
+
+.chip {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	gap: 10px;
+	padding: 10px;
+	position: relative;
+	background-color: #A38BD2;
+	border-radius: 20px;
+	cursor: pointer;
+	transition: border 0.3s; /* Add transition for a hover effect */
+    /* Explicitly set border properties */
+    border: 2px solid transparent; /* Set an initial transparent border */
+}
+
+.chip .selector {
+	position: relative;
+	width: fit-content;
+	margin-top: -1px;
+	font-family: "Inter-Medium", Helvetica;
+	font-weight: 500;
+	color: #FFF;
+	font-size: 13px;
+	letter-spacing: 0;
+	line-height: normal;
+	white-space: nowrap;
+}
+
+.chip:hover{
+    border: 2px solid #A38BD2; /* Set the border color and width on hover */
+    background-color: transparent; /* Remove the background color */
+}
+
+tr:nth-of-type(odd) {background-color: #3D30A2;
+          			color: #FFF;}
+
+
+#reviews{
+	width: 80%;
+	display: inline-flex;
+	flex-direction: column;
+	align-items: flex-start;
+	gap: 40px;
+	position: relative;
+    margin: 0; /* Remove the margin */
+    padding-bottom: 10%;
+
+}
+
+#reviews .div {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	gap: 20px;
+	position: relative;
+	flex: 0 0 auto;
+}
+
+#reviews .div-2 {
+  display: inline-flex;
+  align-items: center;
+  gap: 50px;
+  position: relative;
+  flex: 0 0 auto;
+}
+
+#reviews .mask-group {
+  position: relative;
+  width: 100px;
+  height: 100px;
+}
+
+#reviews .div-3 {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 9px;
+  position: relative;
+  flex: 0 0 auto;
+}
+
+#reviews .datewrap {
+  position: relative;
+  width: fit-content;
+  margin-top: -1px;
+  font-family: "Inter-Regular", Helvetica;
+  font-weight: 400;
+  color: #a38bd2;
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+#reviews .namewrap {
+  position: relative;
+  width: fit-content;
+  font-family: "Inter-Bold", Helvetica;
+  font-weight: 700;
+  color: #ffffff;
+  font-size: 30px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+#reviews .commentwrap {
+  position: relative;
+  width: fit-content;
+  font-family: "Inter-Regular", Helvetica;
+  font-weight: 400;
+  color: #ffffff;
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+
+
+
