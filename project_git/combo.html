@@ -1,11 +1,10 @@
-<!-- account.html -->
+<!-- combo.html -->
 
-<!-- index.html -->
 <html lang="en">
 <head>
 	<title> CHUAN'GU Cinematics - Book Your Tickets</title>
 	<meta charset = "utf-8">
-	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/seatncombo.css">
 	<!-- fonts/icons -->
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -26,8 +25,8 @@
 		        <div id="top-right">
 		          <ul class="nav-home">
 		            <li><a href="index.html">Home</a></li>
-		            <li><a href="index.html">Movies</a></li>
-		            <li><a href="account.html" style="color: #FFFFFF;">Account</a></li>
+		            <li><a href="index.html" style="color: #FFFFFF;">Movies</a></li>
+		            <li><a href="account.html">Account</a></li>
 		            <li><a href="contact.html">Contact Us</a></li>		            		           
 		          </ul>      
 		        </div>
@@ -35,37 +34,72 @@
 	    </div>
 	</div>
 
-    <div id="login">
-		<form id="loginForm" action="#"> 
-	  		<div class="div">
-	        	<div class="loginlabel">LOGIN</div>
-	        	<div class="div-2">
-	          		<div class="div-wrapper">
-						<input type="email" class="form-control" id="email" placeholder="Enter your email" required>		
-	          		</div>
-	          		<div class="div-wrapper">
-						<input type="password" class="form-control" id="password" placeholder="Enter your password" required>		
-	          		</div>
-	        	</div>
-	      	</div>
-	      	<div class="div-3">
-	      		<a href ="account2.html" style="text-decoration: none;">
-					<button type="submit" class="submit" id="submit">Sign In</button>
+
+    <div id="seatselection">
+		<div class="navmovies">
+			<p class="inactive">
+				<a href="seat.html" style="text-decoration: none; color:#9d9d9d;"> Seat Selection</a>
+				<span>&nbsp;</span>
+				<span>/</span>
+			</p>
+
+	        <a href="combo.html" class="active">Add-On Deals</a>
+
+	        <p class="inactive">
+	        	<span>/</span> 
+	        	<span>Confirmation</span>
+	        </p>
+		</div>
+
+
+        <div class="combos">
+          <div class="labelHeader">Add-On Deals</div>
+          <div class="combocontainer">
+			<div class="indivcombo">
+			  <img class="img" src="image/hotdogcombo.png" />
+			  <p class="comboname">Combo 1: Hot Dog Combo</p>
+			  <div class="comboprice">$14.00</div>
+			  <div class="quantitycontainer">
+				<a href="#" class="decrement">
+					<span class="selector"> - </span>
 				</a>
-	      	</div>
-      </form>
- 	      	<div class="div-4">
-	      		<a class="smalllabel" href ="registration.html">Create account here
+				<div class="quantity">
+					<input type="number" class="form-control" id="hotdogQuantity" value="0">
+				</div>
+				<a href="#" class="decrement">
+					<span class="selector"> + </span>
 				</a>
-	      	</div>     
+			  </div>
+			</div>
+
+            <div class="indivcombo">
+              <img class="img" src="image/popcorncombo.png" />
+              <p class="comboname">Combo 2: Popcorn Combo</p>
+              <div class="comboprice">$9.00</div>
+              <div class="quantitycontainer">
+				<a href="#" class="decrement">
+					<span class="selector"> - </span>
+				</a>
+          		<div class="quantity">
+					<input type="number" class="form-control" id="popcornQuantity" value="0">
+          		</div>
+				<a href="#" class="decrement">
+					<span class="selector"> + </span>
+				</a>
+              </div>
+            </div>            
+
+          </div>
+        </div>
+		<a class="next" href="payment.html">
+			<span>Proceed</span>
+		</a>
+      </div>
     </div>
 
 
 
-
-
-
-
+	</div>
 
 
 

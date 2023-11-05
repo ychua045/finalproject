@@ -73,7 +73,7 @@
 	flex: 0 0 auto;
 }
 
-.moviedetails .movielabels {
+.movielabels {
 	position: relative;
 	width: fit-content;
 	font-family: "Inter-Bold", Helvetica;
@@ -86,7 +86,7 @@
 }
 
 
-.moviedetails .desc {
+.desc {
 	position: relative;
 	width: fit-content;
 	font-family: "Inter-Regular", Helvetica;
@@ -97,7 +97,6 @@
 	line-height: 30px;
 	white-space: nowrap;
 	display: inline; /* Add this to make it display on the same line */
-
 }
 
 #showtimes{
@@ -179,7 +178,7 @@ td.date {
     background-color: transparent; /* Remove the background color */
 }
 
-tr:nth-of-type(odd) {background-color: #3D30A2;
+#showtimes tr:nth-of-type(odd) {background-color: #3D30A2;
           			color: #FFF;}
 
 

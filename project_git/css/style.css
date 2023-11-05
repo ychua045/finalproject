@@ -499,10 +499,11 @@ input:focus {
 	font-family: "Inter-SemiBold", Helvetica;
 	font-weight: 600;
 	border: 1px solid transparent;
+	color: #FFF;
 
 }
 
- .reset {
+ #login .reset {
 	display: flex;
 	width: 200px;
 	align-items: center;
@@ -522,10 +523,16 @@ input:focus {
 
 }
 
-#login button:hover {
+#login .submit:hover {
 	background: transparent;
   	border: 1px solid #FFA33C;
   	color: #FFA33C;
+}
+
+#login .reset:hover {
+	background: #FFA33C;
+  	border: 1px solid transparent;
+  	color: #FFF;	
 }
 
 .smalllabel {
@@ -553,4 +560,3 @@ input:focus {
 	white-space: nowrap;
 	text-align: center;
 }
-
