@@ -40,6 +40,7 @@ if (isset($_SESSION['member_id'])) {
 		window.location.href="member.php";
 		</script>
 		<?php
+		exit();
 	}
 	$curinfo = $result->fetch_assoc();
 }
@@ -105,11 +106,13 @@ if (isset($_POST['memEmail'])) {
 			window.location.href="member.php";
 			</script>
 			<?php 
+			exit();
 		}
 		else {
-			$query = "INSERT INTO memberlist (member_name, member_password, member_email, member_hp, member_card) VALUES 
+			$cur_date = date("Y-m-d");
+			$query = "INSERT INTO memberlist (member_name, member_password, member_email, member_hp, member_card, register_date) VALUES 
 						('".$tmpinfo['member_name']."', '".$tmpinfo['member_password']."', '".$tmpinfo['member_email']."', 
-						 '".$tmpinfo['member_hp']."', '".$tmpinfo['member_card']."')";
+						 '".$tmpinfo['member_hp']."', '".$tmpinfo['member_card']."', '".$cur_date."')";
 			$db->query($query);
 			$query = "select * from memberlist where member_email = '".$tmpinfo['member_email']."'";
 			$result = $db->query($query);
@@ -120,6 +123,7 @@ if (isset($_POST['memEmail'])) {
 			window.location.href="member.php";
 			</script>
 			<?php 
+			exit();
 		}	
 	}
 }		
@@ -135,7 +139,7 @@ if (isset($_POST['memEmail'])) {
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Inter&family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400&family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
+
 	<style>
 	.errormsg{
 		color: red;
@@ -152,23 +156,23 @@ if (isset($_POST['memEmail'])) {
 		<div id="header">  
 	      	<div class="main-container">
 		        <div id="logo">
-		          <a href="index.php">
+		          <a href="index.html">
 		            <img src="image/ie4717.png" title="4717" width= "150px" height= "150px">
 		          </a>
 		        </div>
 
 		        <div id="top-right">
 		          <ul class="nav-home">
-		            <li><a href="index.php">Home</a></li>
-		            <li><a href="movie.php">Movies</a></li>
-		            <li><a href="member.php">Account</a></li>
-		            <li><a href="contact.php">Contact Us</a></li>		            		            
+		            <li><a href="index.html">Home</a></li>
+		            <li><a href="index.html#movies">Movies</a></li>
+		            <li><a href="account.html" style="color: #FFFFFF;">Account</a></li>
+		            <li><a href="contact.html">Contact Us</a></li>		            		           
 		          </ul>      
 		        </div>
 	        </div>
 	    </div>
 	</div>
-	
+	<!--
 	<form id="RegisterForm" method="post" action="memberinfo.php">	
 		<div>
 		  <label for="memName"> Username:</label>
@@ -209,32 +213,105 @@ if (isset($_POST['memEmail'])) {
 		<button type="button" onclick="window.location.href='member.php'">Cancel</button>
 		<button type="button" onclick="registerSubmit()">Confirm</button>
 	</form>
+	-->
+	
+	
+	<div id="login">
+		<form id="RegisterForm" method="post" action="memberinfo.php">
+	  		<div class="div" style="gap:10px">
+	        	<div class="loginlabel">Registration</div>
+	        	<p class="regdesc"> Join us as a member today! </p>
+	        	<div class="div-2">
+	          		<div class="div-wrapper">
+						<input type="text" class="form-control" name="memName" id="memName" placeholder="Enter your name" required value = "<?php echo $curinfo['member_name']; ?>" onchange="chkName()">		
+	          		</div>
+					<p id="nameError" class="errormsg"></p>
+					
+	          		<div class="div-wrapper">
+						<input type="text" class="form-control" name="memHp" id="memHp" placeholder="Enter your phone number" required value = "<?php echo $curinfo['member_hp']; ?>" onchange="chkHp()">		
+	          		</div>
+					<p id="hpError" class="errormsg"></p>
+					
+	          		<div class="div-wrapper">
+						<input type="text" class="form-control" name="memEmail" id="memEmail" placeholder="Enter your email" required value = "<?php echo $curinfo['member_email']; ?>" onchange="chkEmail()">		
+	          		</div>
+					<p id="emailError" class="errormsg"></p>
+					
+	          		<div class="div-wrapper">
+						<input type="text" class="form-control" name="memCard" id="memCard" placeholder="1234123412341234" required value = "<?php echo $curinfo['member_card']; ?>" onchange="chkCard()">		
+	          		</div>
+					<p id="cardError" class="errormsg"></p>
+					
+	          		<div class="div-wrapper">
+						<input type="password" class="form-control" name="memPassword" id="memPassword" placeholder="Enter your password" required value = "<?php echo $curinfo['member_password']; ?>" onchange="chkPassword()">		
+	          		</div>
+					<p id="passwordError" class="errormsg"></p>
+					
+					<div class="div-wrapper">
+						<input type="password" class="form-control" name="confirmPassword" id="confirmPassword" placeholder="Confirm your password" required value = "<?php echo $curinfo['member_password']; ?>" onchange="chkConfirmPassword()">		
+	          		</div>
+					<p id="confirmpasswordError" class="errormsg"></p>
+	        	</div>
+	      	</div>
+	      	<div class="div-5">
+	      		<button type="button" class="cancelbutton" id="cancelbutton" onclick="window.location.href='member.php'">Cancel</button>
+	      		<button type="button" class="submitbutton" id="submitbutton" onclick="registerSubmit()">Confirm</button>				
+	      	</div>
+      </form>    
+    </div>
+	
+	
 	
 
     <footer>
-		<div id="footer">
-			<div class="footersection">
-				<p class="labels"> About ChuaN’Gu Cinematics </p>
-				<p class="wording">ChuaN’Gu Cinematics is a fun and exciting cinema that aims to bring you ultimate joy. Catch the latest movies here! </p>
-			</div>
+	    <div id="footer">
+	      <div class="footercontent">
+	        <div class="footersection1">
+	          <div class="footerLabel">About ChuaN’Gu Cinematics</div>
+	          <p class="footerdesc"> ChuaN’Gu Cinematics is a fun and exciting cinema that aims to bring you<br/>ultimate joy. Catch the latest
+	            movies here!
+	          </p>
+	        </div>
+	        <div class="footersectionmid">
+				<div class="footerLabel">Quick Links</div>
+				<div class="footersectionmid1">
+					<div class="footersectioncol">
+						<div class="footerdesc1">
+							<a href="index.html">Home</a>
+						</div>				
+						<div class="footerdesc1">
+							<a href="index.html#movies">Movies</a>
+						</div>
+					</div>
 
-			<div class="footersection">
-				<p class="labels"> Quick Links </p>
-		    	<a class="wording" href="movie.php">Movies</a>
-		    	<a class="wording" href="member.php">Account</a>
-		    	<a class="wording" href="contact.php">Contact us</a>
-			</div>	
-
-			<div class="footersection">
-		    	<p class="labels"> Keep In Touch </p>
-		    	<p class="wording"> +65 9123 4567 <br> chuangu@gmail.com </p>
-		    	<div class="socials">
-		    		<a href="https://instagram.com" target="_blank"><img src="image/insta.png" title="insta"  width="30px" height="30px"></a>
-		    		<a href="https://facebook.com" target="_blank"><img src="image/fb.png" title="fb"  width="30px" height="30px"></a>
-		    	</div>
-			</div>	
-		</div>
+					<div class="footersectioncol">
+						<div class="footerdesc1">
+							<a href="account.html">Account</a>
+						</div>
+						<div class="footerdesc1">
+							<a href="contact.html">Contact Us</a>
+						</div>
+					</div>
+				</div>
+	        </div>
+	        <div class="footersectionmid">
+				<div class="footerLabel">Visit Us</div>
+				<p class="footerdesc">123 Orchard Road, Singapore 12345</p>
+				<p class="footerdesc">Monday to Sunday, 0900 - 1930</p>
+	        </div>
+	        <div class="footersection2">
+			  	<div class="footerLabel">Contact Us</div>
+			  	<div class="footerdesc">6123 4567</div>
+			  	<div class="footerdesc">chuangu@gmail.com</div>
+				<div class="socials">
+					<a href="https://instagram.com" target="_blank"><img src="image/insta.png" title="insta"  width="30px" height="30px"></a>
+					<a href="https://facebook.com" target="_blank"><img src="image/fb.png" title="fb"  width="30px" height="30px"></a>
+				</div>
+	        </div>
+	      </div>
+	      <hr>
+	      <p class="copyright">&copy Copyright 2023 ChuaN’Gu Cinematics</p>
+	    </div>
     </footer>
-	
 </body>
 </html>

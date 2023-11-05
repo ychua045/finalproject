@@ -8,7 +8,34 @@
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Inter&family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
+	<script>
+		let slideIndex = 1;
+		showSlides(slideIndex);
 
+		function plusSlides(n) {
+		  showSlides(slideIndex += n);
+		}
+
+		function currentSlide(n) {
+		  showSlides(slideIndex = n);
+		}
+
+		function showSlides(n) {
+		  let i;
+		  let slides = document.getElementsByClassName("mySlides");
+		  let dots = document.getElementsByClassName("dot");
+		  if (n > slides.length) {slideIndex = 1}    
+		  if (n < 1) {slideIndex = slides.length}
+		  for (i = 0; i < slides.length; i++) {
+		    slides[i].style.display = "none";  
+		  }
+		  for (i = 0; i < dots.length; i++) {
+		    dots[i].className = dots[i].className.replace(" active", "");
+		  }
+		  slides[slideIndex-1].style.display = "block";  
+		  dots[slideIndex-1].className += " active";
+		}
+	</script>
 </head>
 
 <body>
@@ -70,7 +97,33 @@
     	<table class="listings">
     		<tr class="listings">
 	    		<h2 id="labelhead"> Latest </h2>
+				<tr>
     			<td class="listings">
+    				<div class="poster-cont">
+    					<img src="image/barbieposter.jpeg" title="barbie"> 
+    					<div class="middle">
+    						<div class="moviecontent">
+						      <div class="framemovie">
+						        <div class="div">
+						          <div class="movielab">Barbie</div>
+						          <div class="div-2">
+						            <div class="descriptions">Margot Robbie, Ryan Gosline, <br>Issa Rae</div>
+						            <div class="descriptions">Fantasy, Slice of life</div>
+						            <div class="descriptions">114 minutes</div>
+						            <div class="descriptions">7.0/10</div>
+						          </div>
+						        </div>
+						      </div>
+						    </div>
+    					</div>
+    				</div> <br><br>
+
+					<a href="movielist.html" style="text-decoration: none; color: #FFF; gap: 0px; font-size: 15px;">
+						<span class="book-now-btn">Book now!</span>
+					</a>
+    			</td>
+				
+				<td class="listings">
     				<div class="poster-cont">
     					<img src="image/barbieposter.jpeg" title="barbie"> 
     					<div class="middle">
@@ -144,6 +197,110 @@
 						<span class="book-now-btn">Book now!</span>
 					</a>
     			</td>
+				</tr>
+				
+				<tr>
+    			<td class="listings">
+    				<div class="poster-cont">
+    					<img src="image/barbieposter.jpeg" title="barbie"> 
+    					<div class="middle">
+    						<div class="moviecontent">
+						      <div class="framemovie">
+						        <div class="div">
+						          <div class="movielab">Barbie</div>
+						          <div class="div-2">
+						            <div class="descriptions">Margot Robbie, Ryan Gosline, <br>Issa Rae</div>
+						            <div class="descriptions">Fantasy, Slice of life</div>
+						            <div class="descriptions">114 minutes</div>
+						            <div class="descriptions">7.0/10</div>
+						          </div>
+						        </div>
+						      </div>
+						    </div>
+    					</div>
+    				</div> <br><br>
+
+					<a href="movielist.html" style="text-decoration: none; color: #FFF; gap: 0px; font-size: 15px;">
+						<span class="book-now-btn">Book now!</span>
+					</a>
+    			</td>
+				
+				<td class="listings">
+    				<div class="poster-cont">
+    					<img src="image/barbieposter.jpeg" title="barbie"> 
+    					<div class="middle">
+    						<div class="moviecontent">
+						      <div class="framemovie">
+						        <div class="div">
+						          <div class="movielab">Barbie</div>
+						          <div class="div-2">
+						            <div class="descriptions">Margot Robbie, Ryan Gosline, <br>Issa Rae</div>
+						            <div class="descriptions">Fantasy, Slice of life</div>
+						            <div class="descriptions">114 minutes</div>
+						            <div class="descriptions">7.0/10</div>
+						          </div>
+						        </div>
+						      </div>
+						    </div>
+    					</div>
+    				</div> <br><br>
+
+					<a href="movielist.html" style="text-decoration: none; color: #FFF; gap: 0px; font-size: 15px;">
+						<span class="book-now-btn">Book now!</span>
+					</a>
+    			</td>
+
+     			<td class="listings">
+    				<div class="poster-cont">
+    					<img src="image/barbieposter.jpeg" title="barbie"> 
+    					<div class="middle">
+    						<div class="moviecontent">
+						      <div class="framemovie">
+						        <div class="div">
+						          <div class="movielab">Barbie</div>
+						          <div class="div-2">
+						            <div class="descriptions">Margot Robbie, Ryan Gosline, <br>Issa Rae</div>
+						            <div class="descriptions">Fantasy, Slice of life</div>
+						            <div class="descriptions">114 minutes</div>
+						            <div class="descriptions">7.0/10</div>
+						          </div>
+						        </div>
+						      </div>
+						    </div>
+    					</div>
+    				</div> <br><br>
+
+					<a href="movielist.html" style="text-decoration: none; color: #FFF; gap: 0px; font-size: 15px;">
+						<span class="book-now-btn">Book now!</span>
+					</a>
+    			</td>
+
+    			<td class="listings">
+    				<div class="poster-cont">
+    					<img src="image/barbieposter.jpeg" title="barbie"> 
+    					<div class="middle">
+    						<div class="moviecontent">
+						      <div class="framemovie">
+						        <div class="div">
+						          <div class="movielab">Barbie</div>
+						          <div class="div-2">
+						            <div class="descriptions">Margot Robbie, Ryan Gosline, <br>Issa Rae</div>
+						            <div class="descriptions">Fantasy, Slice of life</div>
+						            <div class="descriptions">114 minutes</div>
+						            <div class="descriptions">7.0/10</div>
+						          </div>
+						        </div>
+						      </div>
+						    </div>
+    					</div>
+    				</div> <br><br>
+
+					<a href="movielist.html" style="text-decoration: none; color: #FFF; gap: 0px; font-size: 15px;">
+						<span class="book-now-btn">Book now!</span>
+					</a>
+    			</td>
+				</tr>
+				
     		</tr>
     	</table>
 
@@ -425,33 +582,6 @@
 	    </div>
     </footer>
 
-    <script>
-		let slideIndex = 1;
-		showSlides(slideIndex);
-
-		function plusSlides(n) {
-		  showSlides(slideIndex += n);
-		}
-
-		function currentSlide(n) {
-		  showSlides(slideIndex = n);
-		}
-
-		function showSlides(n) {
-		  let i;
-		  let slides = document.getElementsByClassName("mySlides");
-		  let dots = document.getElementsByClassName("dot");
-		  if (n > slides.length) {slideIndex = 1}    
-		  if (n < 1) {slideIndex = slides.length}
-		  for (i = 0; i < slides.length; i++) {
-		    slides[i].style.display = "none";  
-		  }
-		  for (i = 0; i < dots.length; i++) {
-		    dots[i].className = dots[i].className.replace(" active", "");
-		  }
-		  slides[slideIndex-1].style.display = "block";  
-		  dots[slideIndex-1].className += " active";
-		}
-	</script>
+    
 </body>
 </html>
