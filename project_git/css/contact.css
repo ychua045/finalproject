@@ -94,6 +94,7 @@
 	position: relative;
 	display: inline-flex;
 	gap:10px;
+	font-size: 0;
 }
 
 .contactInfo img {

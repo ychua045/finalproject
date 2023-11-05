@@ -13,7 +13,10 @@ body {
 	min-width: 1000px;
 }
 
+html, body{
+    overflow-x: hidden; /* Prevent horizontal scrolling */
 
+}
 #header {
 	top: 0;
 	padding: 20px 50px 20px 0px;
@@ -120,95 +123,173 @@ li a:active {
     display: block;
 }
 
+
 #footer {
-    background-color: #000000;
-    width: 100%;
-    text-align: center;
-    padding: 10px 0 20px 0;
-    position: relative;
-    bottom:0;
-}
-
-#footer > div {
-    display: inline-block;
-    margin: 0 6%; /* Adjust the gap as needed */
-}
-
-#footer > div:first-child {
-    margin-left: 0;
-}
-
-#footer > div:last-child {
-    margin-right: 0;
-}
-
-/*#footer {
-  align-items: flex-start;
-  background-color: #45414D;
-  display: inline-flex;
-  gap: 6%;
-  padding: 10px 0 10px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding: 30px 100px;
   position: relative;
-  width: 100%;
-}*/
+  background-color: #000000;
+}
 
+.footercontent {
+  align-items: flex-start;
+  gap: 30px;
+  display: inline-flex;
+  position: relative;
+  flex: 0 0 auto;
+  justify-content:  space-between; /* Add this line to align items at the top */
+}
 
+.footersection1 {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+  display: inline-flex;
+  position: relative;
+  flex: 0 0 auto;
+}
 
+.footerLabel {
+  position: relative;
+  width: fit-content;
+  margin-top: -1px;
+  font-family: "Inter-Medium", Helvetica;
+  font-weight: 500;
+  color: #B15EFF;
+  font-size: 15px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
 
+.footerdesc {
+  position: relative;
+  width: 280px;
+  font-family: "Inter-Regular", Helvetica;
+  font-weight: 400;
+  color: #FFF;
+  font-size: 13px;
+  letter-spacing: 0;
+  line-height: normal;
+}
 
-.footersection {
-    width: 250px;
-    text-align: center; /* To center the content vertically and horizontally */
-    position: relative;
-    padding: 0;
-    margin: 0 auto; /* Center the element horizontally */*/
-	line-height: 200px; /* Set the line height to match the height of the section */*/
+.footersectionmid {
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  display: inline-flex;
+  position: relative;
+  flex: 0 0 auto;
+}
 
+.footersecion1,.footersectionmid,.footersection2{
+	flex-direction: column;
+	gap: 20px;
+	display: inline-flex;
+	position: relative;
+	flex: 0 0 auto;
+  	align-items: flex-start; /* Add this line to align items at the top */
+	
+}
+
+.footersection1,
+.footersectionmid p.footerdesc {
+  margin: 0; /* Remove margin for footerdesc within footersection1 and footersectionmid */
+}
+
+.footersection1 {
+	align-items: flex-start;
+	text-align: left;
+}
+
+.footersectionmid {
+	align-items: center;
+	gap: 20px; /* Add gap to create spacing between items */
+	display: inline-flex; /* Keep as inline-flex */
+	position: relative;
+	flex: 0 0 auto;
+	padding: 0; /* Remove padding */
 }
 
 
-#footer .labels {
-	font-family: 'Inter', sans-serif;
-	font-weight: 500;
-	font-size: 15px;
-	color: #A38BD2;
-	text-align: center;
-	letter-spacing: 0;
-	line-height: normal;
+
+.footersectionmid1{
+  align-items: flex-start;
+  justify-content: center;
+  display: inline-flex;
+  gap: 20px;
+  position: relative;
+  flex: 0 0 auto;
+  width: 280px;
+}
+
+.footersectioncol{
+  flex-direction: column;
+  align-items: center;
+  display: inline-flex;
+  gap: 20px;
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.footerdesc1{
+  position: relative;
+  width: 100px;
+  font-family: "Inter-Regular", Helvetica;
+  font-weight: 400;
+  color: #FFF;
+  font-size: 13px;
+  letter-spacing: 0;
+  line-height: normal;	
 }
 
 
-#footer .wording {
-	font-family: 'Inter', sans-serif;
-	font-weight: 300;
-	font-size: 12px;
-	text-align: center;
-	letter-spacing: 0;
-	color: #dbd3d3;
-	padding-bottom: 0;
+
+.footersection2 {
+	align-items: flex-end;
+	text-align: right;
 }
 
 #footer a{
 	text-decoration: none;
-	display: block;
+	color:#FFF;
 }
-
-
 
 .socials {
-	display: inline-flex;
-	justify-content: center;
-	align-items: center;
-    text-align: center; /* Center the content horizontally */
-    position: relative;
-/*    height: 20%;*/
-    font-size: 0; /* Remove any white space between inline elements */
+  align-items: flex-start;
+  justify-content: flex-end;
+  gap: 20px;
+  display: inline-flex;
+  flex: 0 0 auto;
+  position: relative;
+  width: 30px;
+  height: 30px;
 }
 
-/*.socials > * {
-    display: inline-block; /* Display social icons inline */
-/*    margin: 0 5%; /* Adjust the gap as needed */
+hr {
+	border: 1px solid #262626;
+	width:100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
+
+.copyright {
+  position: relative;
+  font-family: "Inter-Regular", Helvetica;
+  font-weight: 400;
+  color: #f2f2f2;
+  font-size: 10px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+
+
 
 #movies{
     width: 80%;
@@ -330,20 +411,23 @@ tr .listings{
 }
 
 .book-now-btn {
+	width: 55%;  	
 	border-radius: 10px;
 	background: #FFA33C;
 	display: flex;
-	display: flex;
-	padding: 10px 50px;
+	padding: 10px 20px;
 	justify-content: center;
 	align-items: center;
 	gap: 10px;
+  	border: 1px solid transparent;
+
 }
 
 .book-now-btn:hover {
 	background: transparent;
   	border: 1px solid #FFA33C;
-  	box-shadow: 0 2px 15px #A38BD2;
+  	color: #FFA33C;
+/*  	box-shadow: 0 2px 15px #A38BD2;*/
 
 }
 
@@ -351,7 +435,7 @@ tr .listings{
 	text-align: left;
 /*	margin-left: 30px;	*/
 	color: #B15EFF;
-	font-size: 40px;
+	font-size: 35px;
 	font-family: 'Inter', sans-serif;
 	font-family: 500;
 }
