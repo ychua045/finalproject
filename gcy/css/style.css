@@ -579,9 +579,9 @@ tr .listings{
 
 #login .div-wrapper{
 	display: flex;
-	align-items: center;
+	align-items: left;
 	width: 100%; /* Adjust the width to 100% */
-	gap: 50px;
+	gap: 20px;
 	flex-direction: column;
 }
 

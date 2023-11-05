@@ -119,12 +119,19 @@ if (isset($_SESSION['member_id'])) {
 	<link href="https://fonts.googleapis.com/css2?family=Inter&family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
 	<script type="text/javascript" src="formvalidation.js"></script>
 	<style>
-	.errormsg{
-		color: red;
-		padding-left: 120px;
-		margin-top: 0px;
-		font-size: 12px;
-	}
+		.errormsg{
+		  position: relative;
+		  width: fit-content;
+		  font-family: "Inter-Medium", Helvetica;
+		  font-weight: 500;
+		  color: red;
+		  font-size: 13px;
+		  letter-spacing: 0;
+		  line-height: normal;
+		  white-space: nowrap;	
+		  margin:0;
+		  text-align: left;		
+		}
 	</style>
 </head>
 

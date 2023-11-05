@@ -14,12 +14,15 @@
 }
 
 .pageOrder{
-	display: inline-flex;
+	display: flex;
 	flex-direction: column;
-	align-items: flex-start;
+	align-items: stretch;
+	justify-content: space-between; /* Add this */
+	width: 60%; /* Full width */
+	max-width: 60%; /* Full width */
 	gap: 60px;
 	position: relative;
-}
+	}
 
 .orderSummary {
 	display: inline-flex;
@@ -128,6 +131,7 @@ th.right{
 
 tr.orderItems{
   border-bottom: 0.3px solid #c2c2c2; /* Add a border at the bottom of each row */
+  border-top: 0.3px solid #c2c2c2;
 }
 
 
