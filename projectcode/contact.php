@@ -1,10 +1,16 @@
-<!-- combo.html -->
+<!--
+-->
+<?php 
+session_start();
+include "connectdb.php";
 
+?>
+<!-- index.html -->
 <html lang="en">
 <head>
 	<title> CHUAN'GU Cinematics - Book Your Tickets</title>
 	<meta charset = "utf-8">
-	<link rel="stylesheet" href="css/seatncombo.css">
+	<link rel="stylesheet" href="css/movie.css">
 	<!-- fonts/icons -->
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,69 +23,22 @@
 		<div id="header">  
 	      	<div class="main-container">
 		        <div id="logo">
-		          <a href="index.html">
+		          <a href="index.php">
 		            <img src="image/ie4717.png" title="4717" width= "150px" height= "150px">
 		          </a>
 		        </div>
 
 		        <div id="top-right">
 		          <ul class="nav-home">
-		            <li><a href="index.html">Home</a></li>
-		            <li><a href="index.html#movies" style="color: #FFFFFF;">Movies</a></li>
-		            <li><a href="account.html">Account</a></li>
-		            <li><a href="contact.html">Contact Us</a></li>		            		           
+		            <li><a href="index.php">Home</a></li>
+		            <li><a href="index.php#movies" style="color: #FFFFFF;">Movies</a></li>
+		            <li><a href="member.php">Account</a></li>
+		            <li><a href="contact.php">Contact Us</a></li>		            		           
 		          </ul>      
 		        </div>
 	        </div>
 	    </div>
 	</div>
-
-
-    <div id="seatselection">
-		<div class="navmovies">
-			<p class="inactive">
-				<a href="seat.html" style="text-decoration: none; color:#9d9d9d;"> Seat Selection</a>
-				<span>&nbsp;</span>
-				<span>/</span>
-			</p>
-
-	        <a href="combo.html" class="active">Add-On Deals</a>
-
-	        <p class="inactive">
-	        	<span>/</span> 
-	        	<span>Confirmation</span>
-	        </p>
-		</div>
-
-
-        <div class="combos">
-            <div class="labelHeader">Add-On Deals</div>
-            <div class="combocontainer">
-		  
-				<div class="indivcombo">
-				  <img class="img" src="image/hotdogcombo.png" />
-				  <p class="comboname">Combo 1: Hot Dog Combo</p>
-				  <div class="comboprice">$14.00</div>
-				  <div class="quantitycontainer">
-					<a href="#" class="decrement">
-						<span class="selector"> - </span>
-					</a>
-					<div class="quantity">
-						<input type="number" class="form-control" id="hotdogQuantity" value="0">
-					</div>
-					<a href="#" class="decrement">
-						<span class="selector"> + </span>
-					</a>
-				  </div>
-				</div>
-			
-            </div>
-        </div>
-		<a class="next" href="payment.html">
-			<span>Proceed</span>
-		</a>
-    </div>
-
 
     <footer>
 	    <div id="footer">
@@ -95,19 +54,19 @@
 				<div class="footersectionmid1">
 					<div class="footersectioncol">
 						<div class="footerdesc1">
-							<a href="index.html">Home</a>
+							<a href="index.php">Home</a>
 						</div>				
 						<div class="footerdesc1">
-							<a href="index.html#movies">Movies</a>
+							<a href="index.php#movies">Movies</a>
 						</div>
 					</div>
 
 					<div class="footersectioncol">
 						<div class="footerdesc1">
-							<a href="account.html">Account</a>
+							<a href="member.php">Account</a>
 						</div>
 						<div class="footerdesc1">
-							<a href="contact.html">Contact Us</a>
+							<a href="contact.php">Contact Us</a>
 						</div>
 					</div>
 				</div>
@@ -131,5 +90,7 @@
 	      <p class="copyright">&copy Copyright 2023 ChuaN’Gu Cinematics</p>
 	    </div>
     </footer>
+
+
 </body>
 </html>

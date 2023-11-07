@@ -125,17 +125,17 @@ if (isset($_SESSION['member_id'])) {
 		<div id="header">  
 	      	<div class="main-container">
 		        <div id="logo">
-		          <a href="index.html">
+		          <a href="index.php">
 		            <img src="image/ie4717.png" title="4717" width= "150px" height= "150px">
 		          </a>
 		        </div>
 
 		        <div id="top-right">
 		          <ul class="nav-home">
-		            <li><a href="index.html">Home</a></li>
-		            <li><a href="index.html#movies">Movies</a></li>
-		            <li><a href="account.html" style="color: #FFFFFF;">Account</a></li>
-		            <li><a href="contact.html">Contact Us</a></li>		            		           
+		            <li><a href="index.php">Home</a></li>
+		            <li><a href="index.php#movies">Movies</a></li>
+		            <li><a href="member.php" style="color: #FFFFFF;">Account</a></li>
+		            <li><a href="contact.php">Contact Us</a></li>		            		           
 		          </ul>      
 		        </div>
 	        </div>
@@ -143,34 +143,6 @@ if (isset($_SESSION['member_id'])) {
 	</div>
 
 	<?php if (isset($_SESSION['member_id'])) { ?>
-		<!-- 
-		<br><br>
-		<button type="button" onclick="window.location.href='member.php?logout=1'">Log out</button>
-		<button type="button" onclick="window.location.href='memberinfo.php'">Change Account Particulars</button>
-		
-		<?php for($i=0; $i<$num_orders; $i++) { ?>
-			
-			<table> 
-			<tr> <td> <img src="image/<?php echo $orders[$i]['moviedetail']['poster']; ?>"> </td> </tr>
-			<tr> <td> <?php echo $orders[$i]['moviedetail']['movie_name']; ?> </td> </tr>
-			<tr> <td> <?php echo $cinemas[$orders[$i]['showdetail']['cinema_id'] - 1]; ?> </td> </tr>
-			<tr> <td> <?php echo "Hall ".$orders[$i]['showdetail']['hall_id']; ?> </td> </tr>
-			<tr> <td> <?php echo $orders[$i]['showdetail']['show_date']; ?> </td> </tr>
-			<tr> <td> <?php echo $orders[$i]['showdetail']['show_time']; ?> </td> </tr>
-			<tr> <td> Number of Tickets: <?php echo $orders[$i]['num_tickets']; ?> </td> </tr>
-			
-			<?php for ($j=0; $j<$orders[$i]['num_tickets']; $j++) { ?>
-				<tr> <td> <?php echo "Row ".$orders[$i]['seats'][$j]['seat_row']." Seat ".$orders[$i]['seats'][$j]['seat_col']; ?> </td> </tr>
-			<?php } ?>
-			<?php for ($j=0; $j<count($orders[$i]['addons']); $j++) { ?>
-				<tr> <td> <?php echo $orders[$i]['addons'][$j]['meal_name']." ".$orders[$i]['addons'][$j]['meal_price']." ".$orders[$i]['addons'][$j]['meal_quantity']; ?> </td> </tr>
-			<?php } ?>
-			</table>
-		<?php } ?>
-		-->
-		
-		
-		
 		<div id="account">
     	<div class="profile">
 			<img class="mask-group" src="image/girl1.png" />
@@ -338,12 +310,14 @@ if (isset($_SESSION['member_id'])) {
 					<div class="div-2">
 						<div class="div-wrapper">
 							<input type="email" class="form-control" name="memEmail" id="memEmail" placeholder="Enter your email" required onchange="chkEmail()">		
+							<p id="emailError" class="errormsg"></p>
 						</div>
-						<p id="emailError" class="errormsg"></p>
+						
 						<div class="div-wrapper">
 							<input type="password" class="form-control" name="memPassword" id="memPassword" placeholder="Enter your password" required onchange="chkPassword()">		
+							<p id="passwordError" class="errormsg"></p>
 						</div>
-						<p id="passwordError" class="errormsg"></p>
+						
 					</div>
 				</div>
 				
@@ -373,19 +347,19 @@ if (isset($_SESSION['member_id'])) {
 				<div class="footersectionmid1">
 					<div class="footersectioncol">
 						<div class="footerdesc1">
-							<a href="index.html">Home</a>
+							<a href="index.php">Home</a>
 						</div>				
 						<div class="footerdesc1">
-							<a href="index.html#movies">Movies</a>
+							<a href="index.php#movies">Movies</a>
 						</div>
 					</div>
 
 					<div class="footersectioncol">
 						<div class="footerdesc1">
-							<a href="account.html">Account</a>
+							<a href="member.php">Account</a>
 						</div>
 						<div class="footerdesc1">
-							<a href="contact.html">Contact Us</a>
+							<a href="contact.php">Contact Us</a>
 						</div>
 					</div>
 				</div>

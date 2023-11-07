@@ -1,4 +1,65 @@
-<!-- index.html -->
+<!--
+-->
+<?php 
+session_start();
+include "connectdb.php";
+
+if (!isset($_GET['movieid'])) {?>
+	<script> 
+	alert("You have not selected a movie. Redirecting to home page."); 
+	window.location.href="index.php";
+	</script>
+	<?php
+}
+
+if (isset($_SESSION['member_id'])) $memberid = $_SESSION['member_id'];
+$_SESSION = [];
+if (isset($memberid)) $_SESSION['member_id'] = $memberid;
+
+$query = "select * from movieinfo where movie_id = ".$_GET['movieid'];
+$result = $db->query($query);
+$num_row = $result->num_rows;
+for ($i=0; $i <$num_row; $i++) {
+	$moviedetail = $result->fetch_assoc();
+}
+
+$cinemas = array();
+$query = "select cinema_name from cinemainfo";
+$result = $db->query($query);
+$num_cinemas = $result->num_rows;
+for ($i=0; $i <$num_cinemas; $i++) {
+	$cinemas[] = $result->fetch_assoc()['cinema_name'];
+}
+
+$cur_date = date("Y-m-d");
+//$cur_time = date("H:i");
+$alldates = array();
+for ($k=0; $k <= 5; $k++) {
+	$alldates[] = date('Y-m-d', strtotime($cur_date. ' + '.$k.' days'));
+}
+
+$allshows = array();
+for ($i=0; $i <$num_cinemas; $i++) {
+	$showincinema = array();
+	$cinemaid = $i + 1;
+	for ($k=0; $k<=5; $k++) {
+		$tmp = array();
+		$query = "select * from showinfo where movie_id = ".$moviedetail['movie_id']." and cinema_id = ".$cinemaid." and show_date = '".$alldates[$k]."' order by show_time";
+		$result = $db->query($query);
+		$num_row = $result->num_rows;
+		for ($j=0; $j <$num_row; $j++) {
+			$tmp[] = $result->fetch_assoc();
+		}
+		if ($num_row == 0) continue;
+		$showincinema[] = $tmp;
+	}
+	if (count($showincinema) == 0) continue;
+	$allshows[] = $showincinema;
+}
+
+
+?>
+
 <html lang="en">
 <head>
 	<title> CHUAN'GU Cinematics - Book Your Tickets</title>
@@ -8,7 +69,23 @@
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Inter&family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
-
+	<style>
+		.moviedetails::before {
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background-image: url("image/<?php echo $moviedetail['splash_poster']; ?>");
+		background-repeat: no-repeat;
+		background-size: cover; /* Set background-size to cover */
+		background-position: top;
+		background-attachment: fixed; /* Fix the background in place */
+		opacity: 0.2;
+		z-index: -1;
+	}
+	</style>
 </head>
 
 <body>
@@ -24,7 +101,7 @@
 		        <div id="top-right">
 		          <ul class="nav-home">
 		            <li><a href="index.php">Home</a></li>
-		            <li><a href="index.php#movies" style="color: #FFFFFF;">Movies</a></li>
+		            <li><a href="index.php#movies">Movies</a></li>
 		            <li><a href="member.php">Account</a></li>
 		            <li><a href="contact.php">Contact Us</a></li>		            		           
 		          </ul>      
@@ -32,149 +109,45 @@
 	        </div>
 	    </div>
 	</div>
-
+	
 	<div class="moviedetails">
 	  <div class="div">
-	    <div class="moviename">Barbie</div>
-	    	<div class="div-2">
-	      		<div><img src="image/barbieposter.jpeg" /></div>
-	      	<div class="div-3">
-	        	<div class="movielabels">Cast: <span class="desc">&nbsp;Margot Robbie</span></div>
-	        	<div class="movielabels">Director: <span class="desc"> &nbsp;placeholder</span></div>
-	        	<div class="movielabels">Genre: <span class="desc"> &nbsp;placeholder</span></div>
-	        	<div class="movielabels">Release: <span class="desc"> &nbsp;placeholder</span></div> 
-	        	<div class="movielabels">Rating: <span class="desc">&nbsp;placeholder</span></div>
-	        	<div class="movielabels">Runtime: <span class="desc">&nbsp;placeholder</span></div>
-	        	<div class="movielabels">Synopsis: <span class="desc">&nbsp;placeholder</span></div>
-	      	</div>
+	    <div class="moviename"><?php echo $moviedetail["movie_name"];?></div>
+		<div class="div-2">
+			<div><img src="<?php echo 'image/'.$moviedetail["poster"];?>" /></div>
+			<div class="div-3">
+				<div class="movielabels"><div>Cast:</div> <div class="desc"><?php echo $moviedetail["casts"];?></div></div>
+				<div class="movielabels"><div>Director:</div> <div class="desc"><?php echo $moviedetail["directors"];?></div></div>
+				<div class="movielabels"><div>Genre:</div> <div class="desc"><?php echo $moviedetail["genre"];?></div></div>
+				<div class="movielabels"><div>Rating:</div> <div class="desc"><?php echo $moviedetail["rating"];?> / 10.0</div></div>
+				<div class="movielabels"><div>Runtime:</div> <div class="desc"><?php echo $moviedetail["runtime"];?></div></div>
+				<div class="movielabels"><div>Synopsis:</div> <div class="desc"><?php echo $moviedetail["synopsis"];?></div></div>
+			</div>
 	    </div>
 	  </div>
 	</div>
 
 	<div id="showtimes">
 		<h2 id="labelhead"> Showtimes </h2>
-		<table class="showtime">
-		  <tr>
-		    <th class="showtime" colspan="3">Clementi</th>
-		  </tr>
-		  <tr>
-		    <td class="date">18 Sept, Sunday</td>
-		    <td>    
-				<a href="seat.html">
-					<button class="chip">
-						<span class="selector">12:00</span>
-					</button>
-				</a>
-		    </td>
-		    <td>    
-				<a href="seat.html">
-					<button class="chip">
-						<span class="selector">13:00</span>
-					</button>
-				</a>
-		    </td>
-		  </tr>
-
-		  <tr>
-		    <td class="date">19 Sept, Sunday</td>
-		    <td>    
-				<a href="seat.html">
-					<button class="chip">
-						<span class="selector">10:00</span>
-					</button>
-				</a>
-		    </td>
-		    <td>    
-				<a href="seat.html">
-					<button class="chip">
-						<span class="selector">13:00</span>
-					</button>
-				</a>
-		    </td>
-		  </tr>
-		</table>
-		
-		<table class="showtime">
-		  <tr>
-		    <th class="showtime" colspan="3">Yishun</th>
-		  </tr>
-		  <tr>
-		    <td class="date">18 Sept, Sunday</td>
-		    <td>    
-				<a href="seat.html">
-					<button class="chip">
-						<span class="selector">15:00</span>
-					</button>
-				</a>
-		    </td>
-		    <td>    
-				<a href="seat.html">
-					<button class="chip">
-						<span class="selector">18:00</span>
-					</button>
-				</a>
-		    </td>
-		  </tr>
-
-		  <tr>
-		    <td class="date">19 Sept, Sunday</td>
-		    <td>    
-				<a href="seat.html">
-					<button class="chip">
-						<span class="selector">10:00</span>
-					</button>
-				</a>
-		    </td>
-		    <td>    
-				<a href="seat.html">
-					<button class="chip">
-						<span class="selector">13:00</span>
-					</button>
-				</a>
-		    </td>
-		  </tr>
-		</table>
-
-		<table class="showtime">
-		  <tr>
-		    <th class="showtime" colspan="3">Hougang</th>
-		  </tr>
-		  <tr>
-		    <td class="date">18 Sept, Sunday</td>
-		    <td>    
-				<a href="seat.html">
-					<button class="chip">
-						<span class="selector">12:00</span>
-					</button>
-				</a>
-		    </td>
-		    <td>    
-				<a href="seat.html">
-					<button class="chip">
-						<span class="selector">13:00</span>
-					</button>
-				</a>
-		    </td>
-		  </tr>
-
-		  <tr>
-		    <td class="date">19 Sept, Sunday</td>
-		    <td>    
-				<a href="seat.html">
-					<button class="chip">
-						<span class="selector">10:00</span>
-					</button>
-				</a>
-		    </td>
-		    <td>    
-				<a href="seat.html">
-					<button class="chip">
-						<span class="selector">13:00</span>
-					</button>
-				</a>
-		    </td>
-		  </tr>
-		</table>
+		<?php for($i=0; $i<count($allshows); $i++) {?>
+			<table class="showtime">
+				<tr> <th class="showtime" colspan="3"><?php echo $cinemas[$allshows[$i][0][0]['cinema_id'] - 1];?></th> </tr>
+				<?php for($j=0; $j<count($allshows[$i]); $j++) { ?>
+					<tr>
+					<td class="date"> <?php echo $allshows[$i][$j][0]['show_date'];?> </td>
+					<?php for($k=0; $k<count($allshows[$i][$j]); $k++) { ?>
+						<td>    
+							<a href="<?php echo 'seatselection.php?show_id='.$allshows[$i][$j][$k]['show_id'];?>">
+								<button class="chip">
+									<span class="selector"><?php echo $allshows[$i][$j][$k]['show_time'];?> </span>
+								</button>
+							</a>
+						</td>
+					<?php } ?>
+					</tr>
+				<?php } ?>
+			</table>
+		<?php } ?>
 	</div>
 
     <div id="reviews">
@@ -258,7 +231,5 @@
 	      <p class="copyright">&copy Copyright 2023 ChuaN’Gu Cinematics</p>
 	    </div>
     </footer>
-
-
 </body>
 </html>

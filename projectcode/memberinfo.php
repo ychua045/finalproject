@@ -138,7 +138,7 @@ if (isset($_POST['memEmail'])) {
 	<!-- fonts/icons -->
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Inter&family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Inter&family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet"> 
 	<script type="text/javascript" src="formvalidation.js"></script>
 </head>
 
@@ -147,65 +147,22 @@ if (isset($_POST['memEmail'])) {
 		<div id="header">  
 	      	<div class="main-container">
 		        <div id="logo">
-		          <a href="index.html">
+		          <a href="index.php">
 		            <img src="image/ie4717.png" title="4717" width= "150px" height= "150px">
 		          </a>
 		        </div>
 
 		        <div id="top-right">
 		          <ul class="nav-home">
-		            <li><a href="index.html">Home</a></li>
-		            <li><a href="index.html#movies">Movies</a></li>
-		            <li><a href="account.html" style="color: #FFFFFF;">Account</a></li>
-		            <li><a href="contact.html">Contact Us</a></li>		            		           
+		            <li><a href="index.php">Home</a></li>
+		            <li><a href="index.php#movies">Movies</a></li>
+		            <li><a href="member.php">Account</a></li>
+		            <li><a href="contact.php">Contact Us</a></li>		            		           
 		          </ul>      
 		        </div>
 	        </div>
 	    </div>
 	</div>
-	<!--
-	<form id="RegisterForm" method="post" action="memberinfo.php">	
-		<div>
-		  <label for="memName"> Username:</label>
-		  <input type="text" name="memName" id="memName" required value = "<?php echo $curinfo['member_name']; ?>" onchange="chkName()">
-	    </div>
-	    <p id="nameError" class="errormsg"></p>
-		
-		<div>
-		  <label for="memEmail"> E-mail:</label>
-		  <input type="text" name="memEmail" id="memEmail" required value = "<?php echo $curinfo['member_email']; ?>" onchange="chkEmail()">
-	    </div>
-	    <p id="emailError" class="errormsg"></p>
-		
-		<div>
-		  <label for="memHp"> Phone (+65):</label>
-		  <input type="text" name="memHp" id="memHp" required value = "<?php echo $curinfo['member_hp']; ?>" onchange="chkHp()">
-	    </div>
-	    <p id="hpError" class="errormsg"></p>
-		
-		<div>
-		  <label for="memCard"> Payment Card No.:</label>
-		  <input type="text" name="memCard" id="memCard" required value = "<?php echo $curinfo['member_card']; ?>" onchange="chkCard()">
-	    </div>
-	    <p id="cardError" class="errormsg"></p>
-		
-		<div>
-		  <label for="memPassword"> Password: </label>
-		  <input type="password" name="memPassword" id="memPassword" required value = "<?php echo $curinfo['member_password']; ?>" onchange="chkPassword()">
-	    </div>
-	    <p id="passwordError" class="errormsg"></p>
-		
-		<div>
-		  <label for="confirmPassword"> Confirm Password: </label>
-		  <input type="password" name="confirmPassword" id="confirmPassword" required value = "<?php echo $curinfo['member_password']; ?>" onchange="chkConfirmPassword()">
-	    </div>
-	    <p id="confirmpasswordError" class="errormsg"></p>
-		
-		<button type="button" onclick="window.location.href='member.php'">Cancel</button>
-		<button type="button" onclick="registerSubmit()">Confirm</button>
-	</form>
-	-->
-	
 	
 	<div id="login">
 		<form id="RegisterForm" method="post" action="memberinfo.php">
@@ -215,33 +172,33 @@ if (isset($_POST['memEmail'])) {
 	        	<div class="div-2">
 	          		<div class="div-wrapper">
 						<input type="text" class="form-control" name="memName" id="memName" placeholder="Enter your name" required value = "<?php echo $curinfo['member_name']; ?>" onchange="chkName()">		
-	          		</div>
-					<p id="nameError" class="errormsg"></p>
+						<p id="nameError" class="errormsg"></p>
+					</div>
 					
 	          		<div class="div-wrapper">
 						<input type="text" class="form-control" name="memHp" id="memHp" placeholder="Enter your phone number" required value = "<?php echo $curinfo['member_hp']; ?>" onchange="chkHp()">		
-	          		</div>
-					<p id="hpError" class="errormsg"></p>
+						<p id="hpError" class="errormsg"></p>
+				    </div>		
 					
 	          		<div class="div-wrapper">
 						<input type="text" class="form-control" name="memEmail" id="memEmail" placeholder="Enter your email" required value = "<?php echo $curinfo['member_email']; ?>" onchange="chkEmail()">		
-	          		</div>
-					<p id="emailError" class="errormsg"></p>
+						<p id="emailError" class="errormsg"></p>
+					</div>
 					
 	          		<div class="div-wrapper">
 						<input type="text" class="form-control" name="memCard" id="memCard" placeholder="1234123412341234" required value = "<?php echo $curinfo['member_card']; ?>" onchange="chkCard()">		
-	          		</div>
-					<p id="cardError" class="errormsg"></p>
+						<p id="cardError" class="errormsg"></p>
+					</div>
 					
 	          		<div class="div-wrapper">
 						<input type="password" class="form-control" name="memPassword" id="memPassword" placeholder="Enter your password" required value = "<?php echo $curinfo['member_password']; ?>" onchange="chkPassword()">		
-	          		</div>
-					<p id="passwordError" class="errormsg"></p>
+						<p id="passwordError" class="errormsg"></p>
+					</div>
 					
 					<div class="div-wrapper">
 						<input type="password" class="form-control" name="confirmPassword" id="confirmPassword" placeholder="Confirm your password" required value = "<?php echo $curinfo['member_password']; ?>" onchange="chkConfirmPassword()">		
-	          		</div>
-					<p id="confirmpasswordError" class="errormsg"></p>
+						<p id="confirmpasswordError" class="errormsg"></p>
+					</div>
 	        	</div>
 	      	</div>
 	      	<div class="div-5">
@@ -268,19 +225,19 @@ if (isset($_POST['memEmail'])) {
 				<div class="footersectionmid1">
 					<div class="footersectioncol">
 						<div class="footerdesc1">
-							<a href="index.html">Home</a>
+							<a href="index.php">Home</a>
 						</div>				
 						<div class="footerdesc1">
-							<a href="index.html#movies">Movies</a>
+							<a href="index.php#movies">Movies</a>
 						</div>
 					</div>
 
 					<div class="footersectioncol">
 						<div class="footerdesc1">
-							<a href="account.html">Account</a>
+							<a href="member.php">Account</a>
 						</div>
 						<div class="footerdesc1">
-							<a href="contact.html">Contact Us</a>
+							<a href="contact.php">Contact Us</a>
 						</div>
 					</div>
 				</div>
