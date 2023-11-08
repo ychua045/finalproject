@@ -272,6 +272,16 @@ else {
 			location.reload();
 		  }
 		});
+		function checkcancel() {
+			if (confirm("Cancel this booking?") == true) {
+				window.location.href="confirmation.php?cancel=1; ?>";
+			}
+		}
+		function checkconfirm() {
+			if (confirm("Confirm and pay for this booking?") == true) {
+				window.location.href="confirmation.php?confirm=1; ?>";
+			}
+		}	
 	</script> 
 </head>
 
@@ -482,14 +492,8 @@ else {
 		<?php } 
 		else { ?>
 		<div class="div-5">
-
-			<a class="cancelTransaction" id="cancelTransaction" href="confirmation.php?cancel=1">
-				<span>Cancel</span>
-			</a>
-
-      		<a href ="confirmation.php?confirm=1" style="text-decoration: none;">
-				<button type="submit" class="submitTransaction" id="submitTransaction">Confirm</button>
-			</a>				
+			<button type="button" class="cancelTransaction" id="cancelTransaction" onclick="checkcancel()">Cancel</button>
+      		<button type="button" class="submitTransaction" id="submitTransaction" onclick="checkconfirm()">Confirm</button>				
       	</div>
 		<?php } ?>
 	</div>

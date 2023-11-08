@@ -145,7 +145,7 @@ if (isset($_SESSION['member_id'])) {
 	<?php if (isset($_SESSION['member_id'])) { ?>
 		<div id="account">
     	<div class="profile">
-			<img class="mask-group" src="image/girl1.png" />
+			<img class="mask-group" src="image/kuromi.png" />
 			<div class="profDetails">
 				<span class="memberName" id="memberName"> <?php echo $member_details['member_name']; ?></span>
 				<span class="memberJoinDate" id="memberJoinDate"> <?php echo "Member since ".substr($member_details['register_date'], 0, 4); ?> </span>	

@@ -8,6 +8,21 @@ if (isset($_SESSION['member_id'])) $memberid = $_SESSION['member_id'];
 $_SESSION = [];
 if (isset($memberid)) $_SESSION['member_id'] = $memberid;
 
+if (isset($_POST['contactName'])) {
+	$to = 'comments@localhost'; 
+	$subject = 'Customer Feedback ['.$_POST['contactName'].']'; 
+	$message = "Customer comment received: \n\nUsername: ".$_POST['contactName']."\nEmail: ".$_POST['contactEmail']."\nPhone: ".$_POST['contactPhone']."\nComment: \n".$_POST['contactComment']; 
+	$headers = 'From: chuangu@localhost' . "\r\n" . 'Reply-To: chuangu@localhost' . "\r\n" . 'X-Mailer: PHP/' . phpversion();
+	mail($to, $subject, $message, $headers, '-fchuangu@localhost');
+	?>
+	<script> 
+	alert("Your feedback is sent to us successfully. We will proceed your request and get back to you as soon as possible. "); 
+	window.location.href="contact.php";
+	</script>
+	<?php
+	exit();
+}
+
 $curinfo = array();
 $curinfo['member_name'] = "";
 $curinfo['member_email'] = "";
@@ -34,7 +49,7 @@ if (isset($_SESSION['member_id'])) {
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Inter&family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
-
+	<script type="text/javascript" src="formvalidation.js"></script>
 </head>
 
 <body>
@@ -91,30 +106,31 @@ if (isset($_SESSION['member_id'])) {
         </div>
 
         <div class="contactForm">
-			<form id="contactForm" action="#"> 
+			<form id="commentForm" method="post" action="contact.php"> 
 				<div class="contactFormField">
 					<div class="contactFormIndiv">
-						<input type="text" class="form-control" id="contactName" placeholder="Enter your name" required value = "<?php echo $curinfo['member_name']; ?>" onchange="chkContactName()">		
+						<input type="text" class="form-control" name="contactName" id="contactName" placeholder="Enter your name" required value = "<?php echo $curinfo['member_name']; ?>" onchange="chkContactName()">		
 						<p id="nameError" class="errormsg"></p>	
 					</div>
-
+					
 					<div class="contactFormIndiv">
-						<input type="text" class="form-control" id="contactPhone" placeholder="Enter your phone number" required value = "<?php echo $curinfo['member_hp']; ?>" onchange="chkContactHp()">		
+						<input type="text" class="form-control" name="contactPhone" id="contactPhone" placeholder="Enter your phone number" required value = "<?php echo $curinfo['member_hp']; ?>" onchange="chkContactHp()">		
 						<p id="hpError" class="errormsg"></p>
 					</div>
 
 					<div class="contactFormIndiv">
-						<input type="text" class="form-control" id="contactEmail" placeholder="Enter your email" required value = "<?php echo $curinfo['member_email']; ?>" onchange="chkContactEmail()">		
+						<input type="text" class="form-control" name="contactEmail" id="contactEmail" placeholder="Enter your email" required value = "<?php echo $curinfo['member_email']; ?>" onchange="chkContactEmail()">		
 						<p id="emailError" class="errormsg"></p>
 					</div>
 
 					<div class="contactFormIndiv">
-						<textarea id="contactComment" rows="4" cols="50" placeholder="Write your inquiries here" required onchange="chkContactComment()"></textarea>
+						<textarea name="contactComment" id="contactComment" rows="4" cols="50" placeholder="Write your inquiries here" required onchange="chkContactComment()"></textarea>
+						<p id="commentError" class="errormsg"></p>
 					</div>
 				</div>
 				<div class="div-5">
 					<button type="reset" class="reset" id="reset">Clear</button>
-					<button type="button" class="submitbutton" id="submitbutton">Register</button>				
+					<button type="button" class="submitbutton" id="submitbutton" onclick="commentSubmit()">Submit</button>				
 				</div>
       		</form>
         </div>

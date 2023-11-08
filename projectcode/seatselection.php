@@ -74,11 +74,14 @@ if (isset($_GET['show_id'])) {
 		$_SESSION['addons'][] = $result->fetch_assoc();
 		$_SESSION['addons'][$i]['meal_quantity'] = 0;
 	}
-	
+	?>
+	<script> 
+	alert("A booking process is started. Time limit is <?php echo $time_expire;?> minutes.\nYour selected seats will be reserved during this booking.\n\nPlease stay in this booking before confirmation. Visiting other pages in our site or starting another booking will cancel your seat reservation. ");
+	</script>
+	<?php
 	$_SESSION['start_dt'] = date("Y-m-d H:i:s");
 	$query = "delete from tmpseats where member_id = ".$_SESSION['member_id'];
 	$db->query($query);
-	
 	?>
 	<script> 
 	window.location.href="seatselection.php";

@@ -92,6 +92,9 @@ function loginSubmit(){
 	var emailError = document.getElementById("emailError");
 	var passwordError = document.getElementById("passwordError");
 	
+	chkPassword();
+	chkHp();
+	
 	if (emailError.textContent.length) {
 		alert("Please check your Email format.");
 		emailInput.focus();
@@ -120,7 +123,12 @@ function registerSubmit(){
 	var passwordError = document.getElementById("passwordError");
 	var confirmInput = document.getElementById("confirmPassword");
 	var confirmError = document.getElementById("confirmpasswordError");
-	
+	chkPassword();
+	chkHp();
+	chkCard();
+	chkConfirmPassword();
+	chkName();
+	chkEmail();
 	if (nameError.textContent.length) {
 		alert("Please check your username format.");
 		nameInput.focus();
@@ -156,4 +164,95 @@ function registerSubmit(){
 	}
 }
 
+function chkContactName() {
+	// Username should be 1 to 20 characters long, containing a-z A-Z 0-9 -_
+	var content = document.getElementById("contactName").value;
+	var error = document.getElementById("nameError");
+	var pattern = /^[a-zA-Z0-9_-]{1,20}$/;
+	
+	if (!pattern.test(content)) {
+		error.textContent = "1 to 20 characters long, containing only alphabets, numbers, '-' and '_'";
+	} else {
+		error.textContent = ""; // Clear the error message
+	}
+	return error.textContent;
+}
 
+function chkContactEmail() {
+	// A string containing only alphabets, numbers, '.' and '-', followed by '@localhost'
+	var content = document.getElementById("contactEmail").value.trim();
+	var error = document.getElementById("emailError");
+	//var pattern = /^[a-zA-Z0-9.-]+@[\w]+(\.[a-zA-Z0-9]+){0,2}\.[a-zA-Z]{1,3}$/;
+	var pattern = /^[a-zA-Z0-9.-]+@localhost$/;
+	if (!pattern.test(content)) {
+		error.textContent = "A string containing only alphabets, numbers, '.' and '-', then followed by '@localhost'";
+	} else {
+		error.textContent = ""; // Clear the error message
+	}
+	return error.textContent;
+}
+
+function chkContactHp() {
+	// 8 digits. 
+	var content = document.getElementById("contactPhone").value.trim();
+	var error = document.getElementById("hpError");
+	var pattern = /^[0-9]{8}$/; 
+	
+	if (!pattern.test(content)) {
+		error.textContent = "Exactly 8 digits";
+	} else {
+		error.textContent = ""; // Clear the error message		
+	}
+	return error.textContent;
+}
+
+function chkContactComment() {
+	// Not empty. 
+	var content = document.getElementById("contactComment").value.trim();
+	var error = document.getElementById("commentError");
+	if (content.length == 0) {
+		error.textContent = "Comment should not be empty. ";
+	} else {
+		error.textContent = ""; // Clear the error message		
+	}
+	return error.textContent;
+}
+
+
+function commentSubmit(){
+	var nameInput = document.getElementById("contactName");
+	var nameError = document.getElementById("nameError");
+	var emailInput = document.getElementById("contactEmail");
+	var emailError = document.getElementById("emailError");
+	var hpInput = document.getElementById("contactPhone");
+	var hpError = document.getElementById("hpError");
+	var commentInput = document.getElementById("contactComment");
+	var commentError = document.getElementById("commentError");
+	chkContactName();
+	chkContactEmail();
+	chkContactHp();
+	chkContactComment();
+	if (nameError.textContent.length) {
+		alert("Please check your username format.");
+		nameInput.focus();
+		nameInput.select();
+	}
+	else if (hpError.textContent.length) {
+		alert("Please check your phone number.");
+		hpInput.focus();
+		hpInput.select();
+	}
+	else if (emailError.textContent.length) {
+		alert("Please check your Email format.");
+		emailInput.focus();
+		emailInput.select();
+	}
+	else if (commentError.textContent.length) {
+		alert("Please check your comment.");
+		commentInput.focus();
+		commentInput.select();
+	}
+	else {
+		document.getElementById("commentForm").submit();
+	}
+}
