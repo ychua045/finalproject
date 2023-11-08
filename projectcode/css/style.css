@@ -590,7 +590,7 @@ hr {
 
 #login .div-wrapper{
 	display: flex;
-	align-items: flex-start;
+	align-items: center;
 	width: 100%; /* Adjust the width to 100% */
 	gap: 5px;
 	flex-direction: column;
@@ -770,14 +770,16 @@ input:focus {
 
 .errormsg{
 	position: relative;
-	width: fit-content;
+/*	width: fit-content;*/
+	inline-size: 500px;
+  overflow-wrap: break-word;
 	font-family: "Inter-Medium", Helvetica;
-	font-weight: 600;
+	font-weight: 500;
 	color:#e04b5a; 
-	font-size: 13px;
+	font-size: 12px;
 	letter-spacing: 0;
 	line-height: normal;
-	white-space: nowrap;	
+/*	white-space: nowrap;	*/
 	margin:0;
 	margin-left:20px;
 	text-align: left;		

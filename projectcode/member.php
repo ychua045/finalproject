@@ -151,6 +151,9 @@ if (isset($_SESSION['member_id'])) {
 				<span class="memberJoinDate" id="memberJoinDate"> <?php echo "Member since ".substr($member_details['register_date'], 0, 4); ?> </span>	
 				<a href="memberinfo.php" id="changeParticulars" class="changeParticulars"> Change Particulars</a>		
 			</div>
+			<a class="logout" id="logout" href="member.php?logout=1">
+				<span>Log Out</span>
+			</a>  			
     	</div>
 
 		<div class="pageOrder">
@@ -177,9 +180,7 @@ if (isset($_SESSION['member_id'])) {
 		  			</div>
 				</div>
 			</div>
-			<a class="logout" id="logout" href="member.php?logout=1">
-				<span>Log Out</span>
-			</a>  
+
 			<div class="orderSummary">
 		      <div class="labelHeader">My Bookings</div>
 			  <?php for($i=0; $i<$num_orders; $i++) { ?>
