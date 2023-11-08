@@ -181,11 +181,12 @@ tr.orderItems{
 
 
 .indivparticular{
-	align-items: flex-start;
+	align-items: flex-end;
 	gap: 10px;
 	display: inline-flex;
 	position: relative;
 	flex: 0 0 auto;
+
 }
 
 .particularLabel{
