@@ -177,7 +177,9 @@ if (isset($_SESSION['member_id'])) {
 		  			</div>
 				</div>
 			</div>
-
+			<a class="logout" id="logout" href="member.php?logout=1">
+				<span>Log Out</span>
+			</a>  
 			<div class="orderSummary">
 		      <div class="labelHeader">My Bookings</div>
 			  <?php for($i=0; $i<$num_orders; $i++) { ?>
@@ -293,9 +295,7 @@ if (isset($_SESSION['member_id'])) {
 			  <?php } ?>
 			</div>
 	    </div>  
-		<a class="logout" id="logout" href="member.php?logout=1">
-		<span>Log Out</span>
-		</a>  	
+			
     </div>
 		
 		

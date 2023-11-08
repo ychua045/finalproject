@@ -47,7 +47,19 @@ for ($i=0; $i <$num_row; $i++) {
 	$topmovies[] = $result->fetch_assoc();
 }
 
-$row_len = 5;
+//select top 4 movies from "now show" with the nearest release date. 
+$latest = array();
+$query = "select movieinfo.* from movieinfo 
+		 where movieinfo.splash_poster is not null 
+		 and exists (select 1 from showinfo where showinfo.movie_id = movieinfo.movie_id and showinfo.show_date >= '".$cur_date."') 
+		 and (DATEDIFF((select min(showinfo.show_date) from showinfo where showinfo.movie_id = movieinfo.movie_id and showinfo.show_date >= '".$cur_date."'), '".$cur_date."') <= 5)
+		 order by movieinfo.release_date DESC limit 4";
+$result = $db->query($query);
+$num_row = $result->num_rows;
+for ($i=0; $i <$num_row; $i++) {
+	//echo $result->fetch_assoc()['movie_name'];
+	$latest[] = $result->fetch_assoc();
+}
 ?>
 
 <!-- index.html -->
@@ -110,6 +122,42 @@ $row_len = 5;
 	
 	<div class="movies" id="movies">
 		<table>
+			<h2 id="labelhead"> Latest </h2>
+			<tr id="listingrow">
+				<?php for($i=0; $i<count($latest); $i++) { ?>
+					<td id="listings" >
+						<div class="poster-cont">
+							<img src="<?php echo "image/".$latest[$i]['poster']; ?>" title="<?php echo $latest[$i]['movie_name']; ?>"> 
+							<div class="middle">
+								<div class="moviecontent">
+								  <div class="framemovie">
+									<div class="div">
+									  <div class="movielab"> <?php echo $latest[$i]['movie_name']; ?> </div>
+									  <div class="div-2">
+										<div class="descriptions"><?php echo substr($latest[$i]['casts'], 0, 32)."..."; ?></div>
+										<div class="descriptions"><?php echo $latest[$i]['genre']; ?></div>
+										<div class="descriptions"><?php echo $latest[$i]['runtime']." minutes"; ?></div>
+										<div class="descriptions"><?php echo $latest[$i]['rating']."/10.0"; ?></div>
+									  </div>
+									</div>
+								  </div>
+								</div>
+							</div>
+						</div> <br><br>
+
+						<a href="<?php echo 'moviedetails.php?movieid='.$latest[$i]["movie_id"];?>" style="text-decoration: none; color: #FFF; font-size: 15px;">
+							<span class="book-now-btn">Book now!</span>
+						</a>
+					</td>
+					
+				<?php } ?>
+			</tr>
+				
+		</table>
+	</div>
+	
+	<div class="movies" id="movies">
+		<table>
 			<h2 id="labelhead"> Now Showing </h2>
 			<tr id="listingrow">
 				<?php for($i=0; $i<count($nowshow); $i++) { ?>
@@ -168,10 +216,6 @@ $row_len = 5;
 								</div>
 							</div>
 						</div> <br><br>
-
-						<a href="<?php echo 'moviedetails.php?movieid='.$comesoon[$i]["movie_id"];?>" style="text-decoration: none; color: #FFF; font-size: 15px;">
-							<span class="book-now-btn">Book now!</span>
-						</a>
 					</td>
 					
 				<?php } ?>

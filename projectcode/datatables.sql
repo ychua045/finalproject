@@ -6,18 +6,19 @@ create table movieinfo
   genre	char(50), 
   rating float(3,1),
   runtime int unsigned,
+  release_date char(20) not null,
   synopsis char(250), 
   poster char(50),
   splash_poster char(50)
 );
-
+/*
 create table moviecomment
 ( comment_id int unsigned not null auto_increment primary key,
   movie_id int unsigned not null,
   commentor char(20),
   comment_content char(250)
 );
-
+*/
 create table showinfo
 (
   show_id int unsigned not null auto_increment primary key,
@@ -80,8 +81,9 @@ create table cinemainfo
   cinema_name char(50) not null,
   num_halls int unsigned not null
 );
-
+/*
 create table cardlist
 ( card_id int unsigned not null auto_increment primary key,
   card_number char(25)
 );
+*/

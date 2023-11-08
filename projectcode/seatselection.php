@@ -266,11 +266,16 @@ $num_tickets = count($seats_selected);
             <div class="placement">
 			  <?php for ($i=0; $i<$num_seatrow; $i++) { ?>
 				<div class="row1">
-					<?php for ($j=0; $j<$num_seatcol; $j++) { ?>
-						<a href="<?php echo "seatselection.php?seat_row=".($i + 1)."&seat_col=".($j + 1); ?>">
+					<?php for ($j=0; $j<$num_seatcol; $j++) { 
+						if ($seatstatus[$i][$j] == 2) {?>
 							<img class="seat" src="<?php echo "image/seat_".$seatstatus[$i][$j].".png"; ?>"/>
-						</a>
-					<?php } ?>
+						<?php } 
+						else { ?>
+							<a href="<?php echo "seatselection.php?seat_row=".($i + 1)."&seat_col=".($j + 1); ?>">
+								<img class="seat" src="<?php echo "image/seat_".$seatstatus[$i][$j].".png"; ?>"/>
+							</a>
+						<?php } 
+					} ?>
 				</div>
 			  <?php } ?>
             </div>

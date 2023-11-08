@@ -67,7 +67,7 @@ if (isset($_POST['memEmail'])) {
 			$email_unique = 0;
 		}
 	}
-	
+	/*
 	$card_valid = 1;
 	$query = "select * from cardlist where card_number = '".$tmpinfo['member_card']."'";
 	$result = $db->query($query);
@@ -75,7 +75,7 @@ if (isset($_POST['memEmail'])) {
 	if ($num_row == 0) {
 		$card_valid = 0;
 	}
-	
+	*/
 	if (!$email_unique) { 
 		$tmpinfo['member_email'] = $curinfo['member_email'];
 		?>
@@ -83,7 +83,7 @@ if (isset($_POST['memEmail'])) {
 		alert("The email is already used by another account. Please enter an unused email. "); 
 		</script>
 	<?php }
-	
+	/*
 	if (!$card_valid) { 
 		$tmpinfo['member_card'] = $curinfo['member_card'];
 		?>
@@ -91,10 +91,11 @@ if (isset($_POST['memEmail'])) {
 		alert("The card is not valid for payment. "); 
 		</script>
 	<?php }
-	
+	*/
 	$curinfo = $tmpinfo;
 	
-	if ($card_valid && $email_unique) {
+	//if ($card_valid && $email_unique) {
+	if ($email_unique) {
 		if (isset($_SESSION['member_id'])) {
 			$query = "UPDATE memberlist SET member_name = '".$tmpinfo['member_name']."', member_password = '".$tmpinfo['member_password']."', 
 						member_email = '".$tmpinfo['member_email']."', member_hp = '".$tmpinfo['member_hp']."', member_card = '".$tmpinfo['member_card']."' 
@@ -167,8 +168,14 @@ if (isset($_POST['memEmail'])) {
 	<div id="login">
 		<form id="RegisterForm" method="post" action="memberinfo.php">
 	  		<div class="div" style="gap:10px">
-	        	<div class="loginlabel">Registration</div>
-	        	<p class="regdesc"> Join us as a member today! </p>
+				<?php if (isset($_session['member_id'])) { ?>
+					<div class="loginlabel">Registration</div>
+					<p class="regdesc"> Join us as a member today! </p>
+				<?php }
+				else { ?>
+					<div class="loginlabel">Change Particulars</div>
+					<p class="regdesc"> You can change your particulars here.  </p>
+	        	<?php }?>
 	        	<div class="div-2">
 	          		<div class="div-wrapper">
 						<input type="text" class="form-control" name="memName" id="memName" placeholder="Enter your name" required value = "<?php echo $curinfo['member_name']; ?>" onchange="chkName()">		

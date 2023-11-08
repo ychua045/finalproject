@@ -4,25 +4,6 @@
 session_start();
 include "connectdb.php";
 
-if (isset($_SESSION['member_id'])) $memberid = $_SESSION['member_id'];
-$_SESSION = [];
-if (isset($memberid)) $_SESSION['member_id'] = $memberid;
-
-$curinfo = array();
-$curinfo['member_name'] = "";
-$curinfo['member_email'] = "";
-$curinfo['member_hp'] = "";
-
-if (isset($_SESSION['member_id'])) {
-	$query = "select * from memberlist where member_id = ".$_SESSION['member_id'];
-	$result = $db->query($query);
-	$num_row = $result->num_rows;
-	if ($num_row != 0) {
-		$curinfo = $result->fetch_assoc();
-	}
-}
-
-
 ?>
 <!-- index.html -->
 <html lang="en">
@@ -43,7 +24,7 @@ if (isset($_SESSION['member_id'])) {
 	      	<div class="main-container">
 		        <div id="logo">
 		          <a href="index.php">
-		            <img src="image/ie4717.png" title="4717">
+		            <img src="image/ie4717.png" title="4717" width= "150px" height= "150px">
 		          </a>
 		        </div>
 
@@ -94,27 +75,29 @@ if (isset($_SESSION['member_id'])) {
 			<form id="contactForm" action="#"> 
 				<div class="contactFormField">
 					<div class="contactFormIndiv">
-						<input type="text" class="form-control" id="contactName" placeholder="Enter your name" required value = "<?php echo $curinfo['member_name']; ?>" onchange="chkContactName()">		
-						<p id="nameError" class="errormsg"></p>	
+						<input type="text" class="form-control" id="contactName" placeholder="Enter your name" required>	
 					</div>
 
 					<div class="contactFormIndiv">
-						<input type="text" class="form-control" id="contactPhone" placeholder="Enter your phone number" required value = "<?php echo $curinfo['member_hp']; ?>" onchange="chkContactHp()">		
-						<p id="hpError" class="errormsg"></p>
+						<input type="text" class="form-control" id="contactPhone" placeholder="Enter your phone number" required>	
 					</div>
 
 					<div class="contactFormIndiv">
-						<input type="text" class="form-control" id="contactEmail" placeholder="Enter your email" required value = "<?php echo $curinfo['member_email']; ?>" onchange="chkContactEmail()">		
-						<p id="emailError" class="errormsg"></p>
+						<input type="email" class="form-control" id="contactEmail" placeholder="Enter your email" required>
 					</div>
 
 					<div class="contactFormIndiv">
-						<textarea id="contactComment" rows="4" cols="50" placeholder="Write your inquiries here" required onchange="chkContactComment()"></textarea>
+							<textarea id="contactComment" rows="4" cols="50" placeholder="Write your inquiries here" required></textarea>
 					</div>
 				</div>
 				<div class="div-5">
-					<button type="reset" class="reset" id="reset">Clear</button>
-					<button type="button" class="submitbutton" id="submitbutton">Register</button>				
+					<a href ="#" style="text-decoration: none;">
+						<button type="reset" class="reset" id="reset">Clear</button>
+					</a>
+
+					<a href ="#" style="text-decoration: none;">
+						<button type="submit" class="submit" id="submit">Register</button>
+					</a>				
 				</div>
       		</form>
         </div>

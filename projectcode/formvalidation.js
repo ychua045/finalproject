@@ -5,7 +5,7 @@ function chkName() {
 	var pattern = /^[a-zA-Z0-9_-]{1,20}$/;
 	
 	if (!pattern.test(content)) {
-		error.textContent = "Invalid username format.";
+		error.textContent = "1 to 20 characters long, containing only alphabets, numbers, '-' and '_'";
 	} else {
 		error.textContent = ""; // Clear the error message
 	}
@@ -14,13 +14,13 @@ function chkName() {
 
 
 function chkEmail() {
-	// Email format: 
+	// A string containing only alphabets, numbers, '.' and '-', followed by '@localhost'
 	var content = document.getElementById("memEmail").value.trim();
 	var error = document.getElementById("emailError");
 	//var pattern = /^[a-zA-Z0-9.-]+@[\w]+(\.[a-zA-Z0-9]+){0,2}\.[a-zA-Z]{1,3}$/;
 	var pattern = /^[a-zA-Z0-9.-]+@localhost$/;
 	if (!pattern.test(content)) {
-		error.textContent = "Invalid email format.";
+		error.textContent = "A string containing only alphabets, numbers, '.' and '-', then followed by '@localhost'";
 	} else {
 		error.textContent = ""; // Clear the error message
 	}
@@ -39,7 +39,7 @@ function chkPassword() {
 	}
 	
 	if (!pattern.test(content)) {
-		error.textContent = "Invalid password format.";
+		error.textContent = "8 to 20 characters long, at least one lowercase letter, one uppercase letter, one digit, and one special character";
 	} else {
 		error.textContent = ""; // Clear the error message
 	}
@@ -52,7 +52,7 @@ function chkConfirmPassword() {
 	var content2 = document.getElementById("confirmPassword").value;
 	var error = document.getElementById("confirmpasswordError");
 	if (content1 !== content2) {
-		error.textContent = "Passwords don't match.";
+		error.textContent = "Doesn't match with the password above";
 	} else {
 		error.textContent = ""; // Clear the error message
 	}
@@ -66,7 +66,7 @@ function chkHp() {
 	var pattern = /^[0-9]{8}$/; 
 	
 	if (!pattern.test(content)) {
-		error.textContent = "Invalid phone number format.";
+		error.textContent = "Exactly 8 digits";
 	} else {
 		error.textContent = ""; // Clear the error message		
 	}
@@ -79,7 +79,7 @@ function chkCard() {
 	var pattern = /^[0-9]{16}$/; 
 	
 	if (!pattern.test(content)) {
-		error.textContent = "Invalid card number format.";
+		error.textContent = "Exactly 16 digits";
 	} else {
 		error.textContent = ""; // Clear the error message
 	}
