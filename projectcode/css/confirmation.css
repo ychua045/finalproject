@@ -36,7 +36,7 @@
 .orderSummary .div-4 {
   display: inline-flex;
   align-items: flex-start;
-  gap: 30px;
+  gap: 37px;
   position: relative;
   flex: 0 0 auto;
 }
@@ -152,7 +152,7 @@ tr.orderItems{
 	font-family: "Inter-Regular", Helvetica;
 	font-weight: 400;
 	color: #FFF;
-	font-size: 13px;
+	font-size: 15px;
 	letter-spacing: -0.29px;
 	line-height: 43.4px;
 	white-space: nowrap;
@@ -186,7 +186,6 @@ tr.orderItems{
 	display: inline-flex;
 	position: relative;
 	flex: 0 0 auto;
-
 }
 
 .particularLabel{
