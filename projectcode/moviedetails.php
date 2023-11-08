@@ -120,7 +120,7 @@ for ($i=0; $i <$num_cinemas; $i++) {
 				<div class="movielabels"><div>Director:</div> <div class="desc"><?php echo $moviedetail["directors"];?></div></div>
 				<div class="movielabels"><div>Genre:</div> <div class="desc"><?php echo $moviedetail["genre"];?></div></div>
 				<div class="movielabels"><div>Rating:</div> <div class="desc"><?php echo $moviedetail["rating"];?> / 10.0</div></div>
-				<div class="movielabels"><div>Runtime:</div> <div class="desc"><?php echo $moviedetail["runtime"];?></div></div>
+				<div class="movielabels"><div>Runtime:</div> <div class="desc"><?php echo $moviedetail["runtime"];?></div> <div class="desc">minutes</div></div>
 				<div class="movielabels"><div>Synopsis:</div> <div class="desc"><?php echo $moviedetail["synopsis"];?></div></div>
 			</div>
 	    </div>
