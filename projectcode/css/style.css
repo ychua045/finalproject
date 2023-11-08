@@ -23,7 +23,7 @@ html, body{
 	/*	background: rgba(0, 0, 0, 0.70);*/
 	background: #121212;
 	position: fixed;
-	height: 100px;
+	height: 90px;
 	display: inline-flex;
 	width: 100%;
 	justify-content: space-between;
@@ -36,17 +36,26 @@ html, body{
 
 
 .main-container {
-    width: 100%;
+/*    width: 100%;
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
+    align-items: flex-start;*/
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 50px;
+  background-color: #191919;
+  width: 100%;
+  min-width: 60%;
+  min-height: 90px;
+  align-items: flex-start;
+  position: relative;
 }
 
 #logo {
-	width: 50%;
+/*	width: 50%;
 	float: left;
 	margin: 0 auto;
-
+*/
 }
 
 #logo img{
@@ -57,7 +66,7 @@ html, body{
 #top-right {
 	width: 40%;
 	float: right;
-	margin-top: 20px;
+	margin-top: 10px;
 }
 
 /*.nav {
