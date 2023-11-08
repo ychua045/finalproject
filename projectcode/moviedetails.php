@@ -94,7 +94,7 @@ for ($i=0; $i <$num_cinemas; $i++) {
 	      	<div class="main-container">
 		        <div id="logo">
 		          <a href="index.php">
-		            <img src="image/ie4717.png" title="4717" width= "150px" height= "150px">
+		            <img src="image/ie4717.png" title="4717">
 		          </a>
 		        </div>
 
@@ -131,18 +131,18 @@ for ($i=0; $i <$num_cinemas; $i++) {
 		<h2 id="labelhead"> Showtimes </h2>
 		<?php for($i=0; $i<count($allshows); $i++) {?>
 			<table class="showtime">
-				<tr> <th class="showtime" colspan="3"><?php echo $cinemas[$allshows[$i][0][0]['cinema_id'] - 1];?></th> </tr>
+				<tr> <th class="showtime" colspan="5"><?php echo $cinemas[$allshows[$i][0][0]['cinema_id'] - 1];?></th> </tr>
 				<?php for($j=0; $j<count($allshows[$i]); $j++) { ?>
 					<tr>
-					<td class="date"> <?php echo $allshows[$i][$j][0]['show_date'];?> </td>
-					<?php for($k=0; $k<count($allshows[$i][$j]); $k++) { ?>
-						<td>    
-							<a href="<?php echo 'seatselection.php?show_id='.$allshows[$i][$j][$k]['show_id'];?>">
-								<button class="chip">
-									<span class="selector"><?php echo $allshows[$i][$j][$k]['show_time'];?> </span>
-								</button>
-							</a>
-						</td>
+						<td class="date"> <?php echo $allshows[$i][$j][0]['show_date'];?> </td>
+						<?php for($k=0; $k<count($allshows[$i][$j]); $k++) { ?>
+							<td>    
+								<a href="<?php echo 'seatselection.php?show_id='.$allshows[$i][$j][$k]['show_id'];?>">
+									<button class="chip">
+										<span class="selector"><?php echo $allshows[$i][$j][$k]['show_time'];?> </span>
+									</button>
+								</a>
+							</td>
 					<?php } ?>
 					</tr>
 				<?php } ?>

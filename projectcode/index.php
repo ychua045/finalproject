@@ -69,7 +69,7 @@ $row_len = 5;
 	      	<div class="main-container">
 		        <div id="logo">
 		          <a href="index.php">
-		            <img src="image/ie4717.png" title="4717" width= "150px" height= "150px">
+		            <img src="image/ie4717.png" title="4717" width= "100px" height= "80px">
 		          </a>
 		        </div>
 
@@ -96,8 +96,8 @@ $row_len = 5;
 				</a>
 			</div>
 		<?php } ?>
-		<a class="prev" onclick="plusSlides(-1)"> left </a>
-		<a class="next" onclick="plusSlides(1)"> right </a>
+		<a class="prev" onclick="plusSlides(-1)"> <img src="image/left.png"> </a>
+		<a class="next" onclick="plusSlides(1)"> <img src="image/right.png"> </a>
 	</div>
 
 	<br>

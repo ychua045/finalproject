@@ -36,19 +36,26 @@ html, body{
 
 
 .main-container {
-	width: 100%;
-/*	margin: auto;*/
-  	text-align: center;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
 }
 
 #logo {
-/*	width: 45%;*/
+	width: 50%;
 	float: left;
 	margin: 0 auto;
+
+}
+
+#logo img{
+	width: 100px;
+	height:80px;
 }
 
 #top-right {
-/*	width: 39%;*/
+	width: 40%;
 	float: right;
 	margin-top: 20px;
 }
@@ -138,8 +145,6 @@ li a:active {
   padding: 16px;
   margin-top: -22px;
   color: white;
-  font-weight: bold;
-  font-size: 18px;
   transition: 0.6s ease;
   border-radius: 0 3px 3px 0;
   user-select: none;
@@ -147,12 +152,13 @@ li a:active {
 
 /* Position the "next button" to the right */
 .next {
-  right: 0;
+  right: 10px;
   border-radius: 3px 0 0 3px;
+
 }
 
 .prev {
-  left: 0;
+  left: 10px;
   border-radius: 3px 0 0 3px;
 }
 
@@ -185,7 +191,7 @@ li a:active {
 }
 
 .active .dot:hover {
-  background-color: #717171;
+  background-color: #FFF;
 }
 
 /* Fading animation */
@@ -521,7 +527,6 @@ hr {
 
 #labelhead{
 	text-align: left;
- 	margin-left: 30px;
 	color: #B15EFF;
 	font-size: 35px;
 	font-family: 'Inter', sans-serif;
@@ -532,8 +537,7 @@ hr {
 #login {
 	margin-top: 50px;
 	display: flex;
-	flex-direction: column;
-	align-items: center;
+	flex-direction: column;	align-items: center;
 	position: relative;
 }
 

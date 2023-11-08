@@ -281,7 +281,7 @@ else {
 	      	<div class="main-container">
 		        <div id="logo">
 		          <a href="index.php">
-		            <img src="image/ie4717.png" title="4717" width= "150px" height= "150px">
+		            <img src="image/ie4717.png" title="4717">
 		          </a>
 		        </div>
 
