@@ -66,7 +66,7 @@
 	position: relative;
 	font-family: "Inter-Bold", Helvetica;
 	font-weight: 700;
-	color: #FCC17F;
+	color: #FFA33C;
 	font-size: 18px;
 	/*letter-spacing: -0.2px;*/
 	display: flex;
@@ -81,7 +81,7 @@
 	font-family: "Inter-Regular", Helvetica;
 	font-weight: 300;
 	color: #c6c5b3;
-	font-size: 18px;
+	font-size: 15px;
 	/*letter-spacing: -0.2px;*/
 	white-space: normal;
 	text-align: left;
@@ -114,7 +114,7 @@ td.chip {
 }
 
 th.showtime {
-	padding: 30px 20px 30px 20px;
+	padding: 35px 20px 35px 20px;
 	font-family: "Inter-SemiBold", Helvetica;
 	font-weight: 600;
 	background-color: #A38BD2; !important
@@ -127,7 +127,7 @@ th.showtime {
 }
 
 td.date {
-	padding: 20px 20px 20px 20px;
+	padding: 30px 20px 30px 20px;
 	font-family: "Inter-Regular", Helvetica;
 	font-weight: 400;
 	color: #FFF;
@@ -137,14 +137,6 @@ td.date {
 	white-space: nowrap;
 	margin-right: 50px;
 }
-
-
-.arrowicons{
-	width:30px;
-	height:30px;
-	padding-left:10px;
-}
-
 
 
 .chip {
