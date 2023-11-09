@@ -1,0 +1,394 @@
+/*confirmation.css*/
+@import "style.css";
+@import "movie.css";
+@import "seatncombo.css";
+
+#confirmation {
+	margin-top: 50px;
+	display: flex;  /*if write inline-flex, the width will not be ok. */
+	flex-direction: column;
+	align-items: center;
+	gap: 50px;
+	position: relative;
+	margin-bottom: 50px;
+}
+
+.pageOrder{
+	display: flex;
+	flex-direction: column;
+	align-items: stretch;
+	justify-content: space-between; /* Add this */
+	width: 60%; /* Full width */
+	max-width: 60%; /* Full width */
+	gap: 60px;
+	position: relative;
+	}
+
+.orderSummary {
+	display: inline-flex;
+	flex-direction: column;
+	align-items: flex-start;
+	gap: 45px;
+	position: relative;
+}
+
+
+.orderSummary .div-4 {
+  display: inline-flex;
+  align-items: flex-start;
+  gap: 37px;
+  position: relative;
+  flex: 0 0 auto;
+}
+
+
+.orderSummary .div-5 {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 5px;
+  position: relative;
+  flex: 0 0 auto;
+  padding:0;
+}
+
+.orderSummary .div-6 {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 5px;
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.orderSummary img{
+	position: relative;
+	width: 200px;
+	height: 300px;
+}
+
+table.summary {
+	border-collapse: collapse; /* Remove outer borders */
+	width:100%;
+	display: inline-flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 86px;
+	padding: 60px 80px;
+	position: relative;
+	background-color: #262626;
+}
+
+th, td.movietitle {
+	position: relative;
+	text-align: center;
+	margin-top: -1px;
+	font-family: "Inter-Bold", Helvetica;
+	font-weight: 700;
+	color: #B15EFF;
+	font-size: 25px;
+	letter-spacing: -0.34px;
+	line-height: 51.1px;
+	background-color: transparent; !important
+
+}
+
+td.orderInfo{
+	display: flex;
+	align-items: center;
+	padding-bottom:20px;
+}
+
+td.left{
+	text-align: left;
+	padding-right: 10px 300px 10px 0px;
+	position: relative;
+}
+
+th.left{
+	text-align: left;
+	padding: 10px 250px 10px 20px;
+	position: relative;
+}
+
+td,th.mid{
+	text-align: center;
+	padding: 10px 20px;
+	position: relative;
+}
+
+td.right{
+	text-align: right;
+	padding: 10px 20px 10px 0px;
+	position: relative;
+}
+
+th.right{
+	text-align: right;
+	padding: 10px 20px 10px 0px;
+	position: relative;
+}
+
+tr.orderItems{
+  border-bottom: 0.3px solid #c2c2c2; /* Add a border at the bottom of each row */
+  border-top: 0.3px solid #c2c2c2;
+}
+
+.orderHeader {
+	width: fit-content;
+	margin-top: -1px;
+	font-family: "Inter-Bold", Helvetica;
+	font-weight: 700;
+	color: #B15EFF;
+	font-size: 15px;
+	letter-spacing: -0.29px;
+	line-height: 43.4px;
+	white-space: nowrap;
+}
+
+.orderBody {
+	width: fit-content;
+	margin-top: -1px;
+	font-family: "Inter-Regular", Helvetica;
+	font-weight: 400;
+	color: #FFF;
+	font-size: 15px;
+	letter-spacing: -0.29px;
+	line-height: 43.4px;
+	white-space: nowrap;
+}
+
+.totalPrice{
+	width: fit-content;
+	margin-top: -1px;
+	font-family: "Inter-Bold", Helvetica;
+	font-weight: 700;
+	color: #FFF;
+	font-size: 20px;
+	letter-spacing: -0.29px;
+	line-height: 43.4px;
+	white-space: nowrap;	
+}
+
+.particulars{
+	flex-direction: column;
+	align-items: flex-start;
+	gap: 25px;
+	display: inline-flex;
+	position: relative;
+	flex: 0 0 auto;	
+}
+
+
+.indivparticular{
+	align-items: flex-end;
+	gap: 10px;
+	display: inline-flex;
+	position: relative;
+	flex: 0 0 auto;
+}
+
+.particularLabel{
+	position: relative;
+	width: fit-content;
+	margin-top: -1px;
+	font-family: "Inter-SemiBold", Helvetica;
+	font-weight: 600;
+	color: #B15EFF;
+	font-size: 18px;
+	letter-spacing: 0;
+	line-height: normal;
+}
+
+
+.particularDetails{
+	position: relative;
+	width: fit-content;
+	margin-top: -1px;
+	font-family: "Inter-Regular", Helvetica;
+	font-weight: 400;
+	color: #ffffff;
+	font-size: 15px;
+	letter-spacing: 0;
+	line-height: normal;	
+}
+
+#confirmation .submitTransaction {
+	display: flex;
+	width: 200px;
+	align-items: center;
+	justify-content: center;
+	gap: 15.4px;
+	padding: 10px;
+	position: relative;
+	flex: 0 0 auto;
+	background-color: #ffa33c;
+	border-radius: 20px;
+	overflow: hidden;
+	font-size: 18px;
+	font-family: "Inter-SemiBold", Helvetica;
+	font-weight: 600;
+	border: 1px solid transparent;
+	color: #FFF;
+	cursor: pointer;
+}
+
+#confirmation .cancelTransaction {
+	display: flex;
+	width: 200px;
+	align-items: center;
+	justify-content: center;
+	gap: 15.4px;
+	padding: 10px;
+	position: relative;
+	flex: 0 0 auto;
+	background-color: transparent;
+	border-radius: 20px;
+	overflow: hidden;
+	font-size: 18px;
+	font-family: "Inter-SemiBold", Helvetica;
+	font-weight: 600;
+	border: 1px solid #ffa33c;
+	color: #ffa33c;
+	text-decoration: none;
+	cursor: pointer;
+
+}
+
+#confirmation .submitTransaction:hover {
+	background: transparent;
+  	border: 1px solid #FFA33C;
+  	color: #FFA33C;
+}
+
+#confirmation .cancelTransaction:hover {
+	background: #FFA33C;
+  	border: 1px solid transparent;
+  	color: #FFF;	
+}
+
+.bookingDesc{
+	position: relative;
+	width: 80%;
+	top: 0;
+	left: 0;
+	font-family: "Inter-Regular", Helvetica;
+	font-weight: 400;
+	color: #ffffff;
+	font-size: 14px;
+	letter-spacing: 0;
+	line-height: normal;
+	text-align: left;
+}
+
+.bookingID{
+	position: relative;
+	font-family: "Inter-Medium", Helvetica;
+	font-weight: 500;
+	color: #ffffff;
+	font-size: 15px;
+	text-align: right;
+	letter-spacing: 0;
+	line-height: normal;
+}	
+
+#account {
+	margin-top: 50px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 50px;
+	position: relative;
+	margin-bottom: 50px;
+}
+
+.profile {
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 20px;
+	display: inline-flex;
+	position: relative;
+	flex: 0 0 auto;
+}
+
+.profile .mask-group{
+	position: relative;
+	width: 150px;
+	height: 150px;
+}
+
+.profile .profDetails{
+	flex-direction: column;
+	align-items: center;
+	gap: 10px;
+	display: inline-flex;
+	position: relative;
+	flex: 0 0 auto;	
+}
+
+.memberName {
+  position: relative;
+  width: fit-content;
+  margin-top: -1px;
+  font-family: "Inter-Bold", Helvetica;
+  font-weight: 700;
+  color: #ffffff;
+  font-size: 20px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.memberJoinDate {
+  position: relative;
+  width: 231px;
+  font-family: "Inter-Regular", Helvetica;
+  font-weight: 400;
+  color: #ffffff;
+  font-size: 15px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.changeParticulars{
+  position: relative;
+  width: 231px;
+  font-family: "Inter-Regular", Helvetica;
+  font-weight: 400;
+  color: #B15EFF;
+  font-size: 13px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+  text-decoration: underline;	
+}
+
+.logout {
+	display: flex;
+	width: 90px;
+	align-items: center;
+	justify-content: center;
+	gap: 15.4px;
+	padding: 10px;
+	position: relative;
+	flex: 0 0 auto;
+	background-color: transparent;
+	border-radius: 20px;
+	overflow: hidden;
+	font-size: 12px;
+	font-family: "Inter-Medium", Helvetica;
+	font-weight: 500;
+	border: 0.5px solid #ffa33c;
+	color: #ffa33c;
+	text-decoration: none;
+	cursor: pointer;
+
+}
+
+.logout:hover {
+	background: transparent;
+  	border: 1px solid #FFA33C;
+  	color: #FFA33C;
+}
