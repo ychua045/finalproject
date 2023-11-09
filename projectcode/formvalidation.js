@@ -28,13 +28,13 @@ function chkEmail() {
 }
 
 
-function chkPassword() {
+function chkPassword(ch) {
     // Password format: 8 to 20 characters which contain at least one lowercase letter, one uppercase letter, one numeric digit, and one special character.
 	var content = document.getElementById("memPassword").value;
 	var error = document.getElementById("passwordError");
 	var pattern = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{8,20}$/; 
 	
-	if (document.getElementById("confirmPassword") != null) {
+	if (ch == 1) {
 		document.getElementById("confirmPassword").value = "";
 	}
 	
@@ -92,8 +92,8 @@ function loginSubmit(){
 	var emailError = document.getElementById("emailError");
 	var passwordError = document.getElementById("passwordError");
 	
-	chkPassword();
-	chkHp();
+	chkPassword(0);
+	chkEmail();
 	
 	if (emailError.textContent.length) {
 		alert("Please check your Email format.");
@@ -123,12 +123,12 @@ function registerSubmit(){
 	var passwordError = document.getElementById("passwordError");
 	var confirmInput = document.getElementById("confirmPassword");
 	var confirmError = document.getElementById("confirmpasswordError");
-	chkPassword();
-	chkHp();
-	chkCard();
-	chkConfirmPassword();
 	chkName();
+	chkHp();
 	chkEmail();
+	chkCard();
+	chkPassword(0);
+	chkConfirmPassword();
 	if (nameError.textContent.length) {
 		alert("Please check your username format.");
 		nameInput.focus();

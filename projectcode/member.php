@@ -315,7 +315,7 @@ if (isset($_SESSION['member_id'])) {
 						</div>
 						
 						<div class="div-wrapper">
-							<input type="password" class="form-control" name="memPassword" id="memPassword" placeholder="Enter your password" required onchange="chkPassword()">		
+							<input type="password" class="form-control" name="memPassword" id="memPassword" placeholder="Enter your password" required onchange="chkPassword(0)">		
 							<p id="passwordError" class="errormsg"></p>
 						</div>
 						

@@ -198,7 +198,7 @@ if (isset($_POST['memEmail'])) {
 					</div>
 					
 	          		<div class="div-wrapper">
-						<input type="password" class="form-control" name="memPassword" id="memPassword" placeholder="Enter your password" required value = "<?php echo $curinfo['member_password']; ?>" onchange="chkPassword()">		
+						<input type="password" class="form-control" name="memPassword" id="memPassword" placeholder="Enter your password" required value = "<?php echo $curinfo['member_password']; ?>" onchange="chkPassword(1)">		
 						<p id="passwordError" class="errormsg"></p>
 					</div>
 					
