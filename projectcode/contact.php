@@ -99,9 +99,9 @@ if (isset($_SESSION['member_id'])) {
           </div>
           <div class="contactItems">
           	<div class="socialsContact">
-	    		<a href="https://instagram.com" target="_blank"><img src="image/insta.png" title="insta"></a>
-	    		<a href="https://facebook.com" target="_blank"><img src="image/fb.png" title="fb"></a> 
-	    	</div>         	
+							<img src="image/insta.png" title="insta">
+							<img src="image/fb.png" title="fb">
+	    			</div>         	
           </div>
         </div>
 
@@ -178,8 +178,8 @@ if (isset($_SESSION['member_id'])) {
 			  	<div class="footerdesc">6123 4567</div>
 			  	<div class="footerdesc">chuangu@gmail.com</div>
 				<div class="socials">
-					<a href="https://instagram.com" target="_blank"><img src="image/insta.png" title="insta"  width="30px" height="30px"></a>
-					<a href="https://facebook.com" target="_blank"><img src="image/fb.png" title="fb"  width="30px" height="30px"></a>
+					<img src="image/insta.png" title="insta"  width="30px" height="30px">
+					<img src="image/fb.png" title="fb"  width="30px" height="30px">
 				</div>
 	        </div>
 	      </div>
