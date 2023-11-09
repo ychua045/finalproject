@@ -110,22 +110,22 @@ if (isset($_SESSION['member_id'])) {
 				<div class="contactFormField">
 					<div class="contactFormIndiv">
 						<input type="text" class="form-control" name="contactName" id="contactName" placeholder="Enter your name" required value = "<?php echo $curinfo['member_name']; ?>" onchange="chkContactName()">		
-						<p id="nameError" class="errormsg"></p>	
+						<p id="nameError" class="errormsgContact"></p>	
 					</div>
 					
 					<div class="contactFormIndiv">
 						<input type="text" class="form-control" name="contactPhone" id="contactPhone" placeholder="Enter your phone number" required value = "<?php echo $curinfo['member_hp']; ?>" onchange="chkContactHp()">		
-						<p id="hpError" class="errormsg"></p>
+						<p id="hpError" class="errormsgContact"></p>
 					</div>
 
 					<div class="contactFormIndiv">
 						<input type="text" class="form-control" name="contactEmail" id="contactEmail" placeholder="Enter your email" required value = "<?php echo $curinfo['member_email']; ?>" onchange="chkContactEmail()">		
-						<p id="emailError" class="errormsg"></p>
+						<p id="emailError" class="errormsgContact"></p>
 					</div>
 
 					<div class="contactFormIndiv">
 						<textarea name="contactComment" id="contactComment" rows="4" cols="50" placeholder="Write your inquiries here" required onchange="chkContactComment()"></textarea>
-						<p id="commentError" class="errormsg"></p>
+						<p id="commentError" class="errormsgContact"></p>
 					</div>
 				</div>
 				<div class="div-5">
