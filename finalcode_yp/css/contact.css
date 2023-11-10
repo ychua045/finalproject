@@ -1,0 +1,248 @@
+/*contact.css*/
+@import "style.css";
+
+#contact {
+	margin-top: 50px;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 45px;
+  position: relative;
+}
+
+#contact .labelHeader {
+	position: relative;
+	width: fit-content;
+	font-family: "Inter-Bold", Helvetica;
+	font-weight: 700;
+	color: #B15EFF;
+	font-size: 25px;
+	letter-spacing: -0.2px;
+	line-height: 30px;
+	white-space: nowrap;
+}
+
+.contactDesc {
+	position: relative;
+	width: 100%;
+	top: 0;
+	left: 0;
+	font-family: "Inter-Regular", Helvetica;
+	font-weight: 400;
+	color: #ffffff;
+	font-size: 14px;
+	letter-spacing: 0;
+	line-height: normal;
+	text-align: center;
+}
+
+.contactcontainer {
+	float:left;
+	align-items: flex-start;
+	gap: 180px;
+	display: inline-flex;
+	position: relative;
+	flex: 0 0 auto;
+}
+
+.contactInfo {
+	flex-direction: column;
+	align-items: flex-start;
+	gap: 30px;
+	display: inline-flex;
+	position: relative;
+	flex: 0 0 auto;
+}
+
+.contactItems {
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: center;
+	gap: 20px;
+	display: inline-flex;
+	position: relative;
+	flex: 0 0 auto;
+}
+
+.contactLabel {
+	position: relative;
+	width: fit-content;
+	margin-top: -1px;
+	font-family: "Inter-SemiBold", Helvetica;
+	font-weight: 600;
+	color: #B15EFF;
+	font-size: 15px;
+	letter-spacing: 0;
+	line-height: normal;
+	white-space: nowrap;
+}
+
+.contactContent {
+	position: relative;
+	width: fit-content;
+	margin-top: -1px;
+	font-family: "Inter-Regular", Helvetica;
+	font-weight: 400;
+	color: #ffffff;
+	font-size: 15px;
+	letter-spacing: 0;
+	line-height: normal;
+	white-space: nowrap;
+}
+
+.socials{
+	position: relative;
+	display: inline-flex;
+	gap:10px;
+	font-size: 0;
+}
+
+.contactInfo img {
+	position: relative;
+	width: 30px;
+	height: 30px;
+}
+
+#contactName, #contactEmail, #contactPhone{
+	background: transparent; 
+	border: 1px solid;
+	border-radius: 25px;
+	border-color: #a38bd2;
+	padding: 10px 20px; /* Adjust the padding */
+	color: #FFF; 
+	font-family: "Inter", sans-serif;
+	font-size: 15px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: normal;
+	width: 400px; /* Set the width to 100% */
+	height: 60px; /* Adjust the height */
+}
+
+#contactComment {
+	background: transparent; 
+	border: 1px solid;
+	border-radius: 25px;
+	border-color: #a38bd2;
+	padding: 10px 20px; /* Adjust the padding */
+	color: #FFF;
+	font-family: "Inter", sans-serif;
+	font-size: 15px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: normal;
+	width: 400px; /* Set the width to 100% */
+	height: 200px; /* Adjust the height */	
+}
+
+#contactName, #contactEmail, #contactPhone, #contactComment textarea::placeholder, input[type=text]::placeholder, input[type=email]::placeholder{
+	color: #96999B;
+	font-family: "Inter", sans-serif;
+	font-size: 15px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: normal;
+}
+
+#contactName, #contactEmail, #contactPhone, #contactComment input:focus {
+	border: 1px solid #B15EFF;
+	color:#FFF;
+}
+
+
+.contactForm {
+	float:right;
+	flex-direction: column;
+	align-items: center;
+	gap: 40px;
+	display: flex;
+	position: relative;
+	flex: 0 0 auto;
+}
+
+.contactFormField {
+	flex-direction: column;
+	align-items: center;
+	gap: 20px;
+	display: flex;
+	position: relative;
+	flex: 0 0 auto;
+}
+
+.contactFormIndiv{
+	display: flex;
+	align-items: flex-start;
+	width: 100%; /* Adjust the width to 100% */
+	gap: 5px;
+	flex-direction: column;
+}
+
+
+#contact .submitbutton {
+	display: flex;
+	width: 150px;
+	align-items: center;
+	justify-content: center;
+	gap: 15.4px;
+	padding: 10px 20px;
+	position: relative;
+	flex: 0 0 auto;
+	background-color: #ffa33c;
+	border-radius: 20px;
+	overflow: hidden;
+	font-size: 18px;
+	font-family: "Inter-SemiBold", Helvetica;
+	font-weight: 600;
+	border: 1px solid transparent;
+	color: #FFF;
+
+}
+
+ #contact .reset {
+	display: flex;
+	width: 150px;
+	align-items: center;
+	justify-content: center;
+	gap: 15.4px;
+	padding: 10px 20px;
+	position: relative;
+	flex: 0 0 auto;
+	background-color: transparent;
+	border-radius: 20px;
+	overflow: hidden;
+	font-size: 18px;
+	font-family: "Inter-SemiBold", Helvetica;
+	font-weight: 600;
+	border: 1px solid #ffa33c;
+	color: #ffa33c;
+
+}
+
+#contact .submitButton:hover {
+	background: transparent;
+  	border: 1px solid #FFA33C;
+  	color: #FFA33C;
+}
+
+#contact .reset:hover {
+	background: #FFA33C;
+  	border: 1px solid transparent;
+  	color: #FFF;	
+}
+
+.errormsgContact{
+	position: relative;
+/*	width: fit-content;*/
+	inline-size: 400px;
+  overflow-wrap: break-word;
+	font-family: "Inter-Medium", Helvetica;
+	font-weight: 500;
+	color:#e04b5a; 
+	font-size: 12px;
+	letter-spacing: 0;
+	line-height: normal;
+/*	white-space: nowrap;	*/
+	margin:0;
+	margin-left:10px;
+	text-align: left;		
+}
