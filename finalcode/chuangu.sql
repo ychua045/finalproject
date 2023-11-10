@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Nov 09, 2023 at 07:51 PM
--- Server version: 10.4.28-MariaDB
--- PHP Version: 8.2.4
+-- Host: localhost
+-- Generation Time: Nov 10, 2023 at 03:05 AM
+-- Server version: 10.4.21-MariaDB
+-- PHP Version: 8.1.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -32,7 +32,7 @@ CREATE TABLE `addonmeals` (
   `meal_name` char(50) NOT NULL,
   `meal_price` float(4,2) NOT NULL,
   `meal_image` char(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `addonmeals`
@@ -41,10 +41,10 @@ CREATE TABLE `addonmeals` (
 INSERT INTO `addonmeals` (`meal_id`, `meal_name`, `meal_price`, `meal_image`) VALUES
 (1, 'Hot Dog Combo', 14.00, 'hotdogcombo.png'),
 (2, 'Popcorn Combo', 12.00, 'popcorncombo.png'),
-(3, 'Burger Combo', 13.00, 'burger.jpg'),
-(4, 'Iced Lemon Tea', 2.00, 'lemontea.jpg'),
+(3, 'Burger Combo', 13.00, 'burgercombo.png'),
+(4, 'Iced Lemon Tea', 2.00, 'lemontea.png'),
 (5, 'Iced Milk Tea', 4.50, 'milktea.png'),
-(6, 'Iced Coca Cola', 3.00, 'cola.png');
+(6, 'Iced Coca Cola', 3.00, 'coke.png');
 
 -- --------------------------------------------------------
 
@@ -56,7 +56,7 @@ CREATE TABLE `cinemainfo` (
   `cinema_id` int(10) UNSIGNED NOT NULL,
   `cinema_name` char(50) NOT NULL,
   `num_halls` int(10) UNSIGNED NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `cinemainfo`
@@ -80,7 +80,7 @@ CREATE TABLE `memberlist` (
   `member_hp` char(20) NOT NULL,
   `member_card` char(25) NOT NULL,
   `register_date` char(20) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `memberlist`
@@ -88,7 +88,8 @@ CREATE TABLE `memberlist` (
 
 INSERT INTO `memberlist` (`member_id`, `member_name`, `member_password`, `member_email`, `member_hp`, `member_card`, `register_date`) VALUES
 (1, 'Jane', 'Jane0101#', 'jane@localhost', '81193988', '1234567812345678', '2023-11-09'),
-(2, 'rheallyc', 'Gcy1018!', 'rheallyc@localhost', '85150358', '1234567812345678', '2022-10-01');
+(2, 'rheallyc', 'Gcy1018!', 'rheallyc@localhost', '85150358', '1234567812345678', '2022-10-01'),
+(3, 'nicole', 'Nicscyp2001*', 'nicole@localhost', '81234567', '1234567812345678', '2023-11-10');
 
 -- --------------------------------------------------------
 
@@ -108,7 +109,7 @@ CREATE TABLE `movieinfo` (
   `synopsis` char(250) DEFAULT NULL,
   `poster` char(50) NOT NULL,
   `splash_poster` char(50) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `movieinfo`
@@ -142,7 +143,7 @@ CREATE TABLE `orderaddon` (
   `meal_name` char(50) NOT NULL,
   `meal_price` float(4,2) NOT NULL,
   `meal_quantity` int(10) UNSIGNED NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `orderaddon`
@@ -158,7 +159,9 @@ INSERT INTO `orderaddon` (`order_id`, `meal_name`, `meal_price`, `meal_quantity`
 (7, 'Popcorn Combo', 12.00, 2),
 (7, 'Iced Lemon Tea', 2.00, 1),
 (7, 'Iced Milk Tea', 4.50, 2),
-(7, 'Iced Coca Cola', 3.00, 1);
+(7, 'Iced Coca Cola', 3.00, 1),
+(8, 'Burger Combo', 13.00, 1),
+(8, 'Iced Coca Cola', 3.00, 1);
 
 -- --------------------------------------------------------
 
@@ -173,7 +176,7 @@ CREATE TABLE `orderlist` (
   `show_id` int(10) UNSIGNED NOT NULL,
   `num_tickets` int(10) UNSIGNED NOT NULL,
   `ticket_price` float(4,2) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `orderlist`
@@ -186,7 +189,8 @@ INSERT INTO `orderlist` (`order_id`, `order_dt`, `account_id`, `show_id`, `num_t
 (4, '2023-11-09 18:30:16', 1, 2, 2, 14.00),
 (5, '2023-11-09 18:38:25', 1, 8, 1, 12.00),
 (6, '2023-11-09 18:40:41', 1, 8, 3, 12.00),
-(7, '2023-11-09 19:46:37', 2, 15, 4, 14.00);
+(7, '2023-11-09 19:46:37', 2, 15, 4, 14.00),
+(8, '2023-11-10 03:05:12', 3, 4, 1, 14.00);
 
 -- --------------------------------------------------------
 
@@ -198,7 +202,7 @@ CREATE TABLE `orderseat` (
   `order_id` int(10) UNSIGNED NOT NULL,
   `seat_row` int(10) UNSIGNED NOT NULL,
   `seat_col` int(10) UNSIGNED NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `orderseat`
@@ -224,7 +228,8 @@ INSERT INTO `orderseat` (`order_id`, `seat_row`, `seat_col`) VALUES
 (7, 3, 4),
 (7, 3, 5),
 (7, 3, 6),
-(7, 3, 7);
+(7, 3, 7),
+(8, 1, 7);
 
 -- --------------------------------------------------------
 
@@ -240,7 +245,7 @@ CREATE TABLE `showinfo` (
   `show_date` char(20) NOT NULL,
   `show_time` char(20) NOT NULL,
   `ticket_price` float(4,2) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `showinfo`
@@ -279,7 +284,7 @@ CREATE TABLE `tmpseats` (
   `seat_col` int(10) UNSIGNED NOT NULL,
   `member_id` int(10) UNSIGNED NOT NULL,
   `start_dt` char(20) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Indexes for dumped tables
@@ -341,7 +346,7 @@ ALTER TABLE `cinemainfo`
 -- AUTO_INCREMENT for table `memberlist`
 --
 ALTER TABLE `memberlist`
-  MODIFY `member_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `member_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `movieinfo`
@@ -353,7 +358,7 @@ ALTER TABLE `movieinfo`
 -- AUTO_INCREMENT for table `orderlist`
 --
 ALTER TABLE `orderlist`
-  MODIFY `order_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `order_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `showinfo`

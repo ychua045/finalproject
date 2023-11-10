@@ -218,7 +218,7 @@
 
 }
 
-#contact .submit:hover {
+#contact .submitButton:hover {
 	background: transparent;
   	border: 1px solid #FFA33C;
   	color: #FFA33C;
