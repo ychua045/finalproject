@@ -1,0 +1,428 @@
+/*seat.css*/
+@import "style.css";
+@import "movie.css";
+
+
+#seatselection {
+	width: 80%;
+	margin-top: 50px;
+	display: inline-flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 50px;
+	position: relative;
+	margin-bottom: 50px;
+}
+
+.navmovies {
+  display: inline-flex;
+  align-items: flex-start;
+  gap: 10px;
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.active {
+  position: relative;
+  width: fit-content;
+  margin-top: -1px;
+  font-family: "Inter-Medium", Helvetica;
+  font-weight: 500;
+  color: #9d9d9d;
+  font-size: 15px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.inactive  {
+  position: relative;
+  width: fit-content;
+  margin-top: -1px;
+  font-family: "Inter-Medium", Helvetica;
+  font-weight: 500;
+  color: #B15EFF;
+  font-size: 15px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+  text-decoration: none;
+}
+
+.movieinfo img{
+	position: relative;
+	width: 250px;
+	height: 350px;
+}
+
+
+.movieinfo {
+  display: inline-flex;
+  align-items: flex-start;
+  gap: 120px;
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.theatreinfo {
+	float:left;
+	display: inline-flex;
+	flex-direction: column;
+	align-items: flex-start;
+	gap: 45px;
+	position: relative;
+	flex: 0 0 auto;
+}
+
+
+.labelHeader {
+	position: relative;
+	width: fit-content;
+	font-family: "Inter-Bold", Helvetica;
+	font-weight: 700;
+	color: #B15EFF;
+	font-size: 25px;
+	letter-spacing: -0.2px;
+	line-height: 30px;
+	white-space: nowrap;
+}
+
+.movieinfo .div-4 {
+  display: inline-flex;
+  align-items: flex-start;
+  gap: 30px;
+  position: relative;
+  flex: 0 0 auto;
+}
+
+
+.movieinfo .div-5 {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 5px;
+  position: relative;
+  flex: 0 0 auto;
+  padding:0;
+}
+
+.movieinfo .div-6 {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 5px;
+  position: relative;
+  flex: 0 0 auto;
+}
+
+
+
+
+
+
+.arrangement {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 45px;
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.screen {
+  display: flex;
+  width: 80px;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 12px 300px;
+  background-color: #A38BD2;
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.theatrelabel {
+  position: relative;
+  width: fit-content;
+  margin-top: -1px;
+  font-family: "Inter-Medium", Helvetica;
+  font-weight: 500;
+  color: #FFF;
+  font-size: 15px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.placement {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.placement .row1 {
+  display: inline-flex;
+  align-items: flex-start;
+  gap: 11px;
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.placement .seat {
+  position: relative;
+  width: 20px;
+  height: 20px;
+  object-fit: cover;
+}
+
+.placement .row2 {
+  display: flex;
+/*  width: 4px;*/
+  align-items: flex-start;
+  gap: 11px;
+  position: relative;
+  flex: 0 0 auto;
+}
+
+
+.next {
+	display: flex;
+	width: 200px;
+	align-items: center;
+	justify-content: center;
+	gap: 15.4px;
+	padding: 10px 20px;
+	position: relative;
+	flex: 0 0 auto;
+	color:#FFF;
+	background-color: #ffa33c;
+	border-radius: 20px;
+	overflow: hidden;
+	font-size: 20px;
+	font-family: "Inter-SemiBold", Helvetica;
+	font-weight: 600;
+	border: 1px solid transparent;
+	text-decoration: none;
+}
+
+.next:hover {
+	background: transparent;
+  	border: 1px solid #FFA33C;
+  	color: #FFA33C;
+}
+
+
+.legend {
+  display: flex;
+/*  width: 377px;*/
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.legend .label {
+  position: relative;
+  width: fit-content;
+  margin-left: -6.35px;
+  font-family: "Inter-SemiBold", Helvetica;
+  font-weight: 600;
+  color: #ffffff;
+  font-size: 10px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.legend .legendtype {
+  display: inline-flex;
+  align-items: center;
+  gap: 6.37px;
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.legend .indicate {
+  position: relative;
+  width: fit-content;
+  font-family: "Inter-Medium", Helvetica;
+  font-weight: 500;
+  color: #ffffff;
+  font-size: 10px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.legend .img {
+  width: 20px;
+  height: 20px;
+  position: relative;
+  object-fit: cover;
+}
+
+.combos {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  gap: 45px;
+  position: relative;
+  flex: 0 0 auto;
+}
+
+
+.combos .combocontainer {
+  display: flex;
+  width: 100%;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 100px;
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.combos .indivcombo {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.combos .img {
+  position: relative;
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+}
+
+.combos .comboname {
+  position: relative;
+  font-family: "Inter-Medium", Helvetica;
+  font-weight: 500;
+  color: #B15EFF;
+  font-size: 20px;
+  letter-spacing: -0.22px;
+  line-height: 33px;
+  margin:0px;
+}
+
+.combos .comboprice {
+  position: relative;
+  width: fit-content;
+  font-family: "Inter-Bold", Helvetica;
+  font-weight: 700;
+  color: #ffffff;
+  font-size: 20px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.combos .quantitycontainer {
+  display: inline-flex;
+  align-items: flex-start;
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.combos .decrement {
+	display: flex;
+	width: 20px;
+	height: 20px;
+	align-items: center;
+	justify-content: center;
+	gap: 60px;
+	padding: 5px;
+	position: relative;
+	background-color: #ffffff;
+	border-top-width: 0.92px;
+	border-top-style: solid;
+	border-bottom-width: 0.92px;
+	border-bottom-style: solid;
+	border-left-width: 0.92px;
+	border-left-style: solid;
+	border-color: #b3b3b3;
+	text-decoration: none;
+}
+
+.combos .selector {
+	position: relative;
+	width: fit-content;
+	font-family: "Inter-Medium", Helvetica;
+	font-weight: 500;
+	color: #292727;
+	font-size: 15.7px;
+	letter-spacing: 0;
+	line-height: normal;
+}
+
+.combos .quantity {
+	display: inline-flex;
+	height: 20px;
+	align-items: center;
+	justify-content: center;
+	gap: 60px;
+	padding: 5px 10px;
+	position: relative;
+	flex: 0 0 auto;
+	background-color: #ffffff;
+	border: 0.92px solid;
+	border-color: #b3b3b3;
+}
+
+#hotdogQuantity, #popcornQuantity {
+	position: relative;
+	width: fit-content;
+	font-family: "Inter-Regular", Helvetica;
+	font-weight: 400;
+	color: #292727;
+	font-size: 15.7px;
+	letter-spacing: 0;
+	line-height: normal;
+	border:none;
+    width: 150px; /* Set the desired width */
+    margin: 0 auto; /* Center-align the text */
+    text-align: center;
+}
+.foodQuantity {
+	position: relative;
+	width: fit-content;
+	font-family: "Inter-Regular", Helvetica;
+	font-weight: 400;
+	color: #292727;
+	font-size: 15.7px;
+	letter-spacing: 0;
+	line-height: normal;
+	border:none;
+    width: 150px; /* Set the desired width */
+    margin: 0 auto; /* Center-align the text */
+    text-align: center;
+}
+
+.combos .increment {
+	display: flex;
+	width: 20px;
+	height: 20px;
+	align-items: center;
+	justify-content: center;
+	gap: 60px;
+	padding: 5px;
+	position: relative;
+	background-color: #ffffff;
+	border-top-width: 0.92px;
+	border-top-style: solid;
+	border-right-width: 0.92px;
+	border-right-style: solid;
+	border-bottom-width: 0.92px;
+	border-bottom-style: solid;
+	border-color: #b3b3b3;
+	text-decoration: none;
+ 
+}

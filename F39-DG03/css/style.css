@@ -1,0 +1,790 @@
+/*style.css*/
+
+body {
+	background: #121212;
+	padding: 0px;
+	margin: 0px;
+	font-family: 'Inter', Lato;
+	text-align: center;
+	font-size: 35px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: normal;
+	min-width: 1000px;
+}
+
+html, body{
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+
+}
+#header {
+	top: 0;
+	padding: 20px 50px 20px 0px;
+	/*	background: rgba(0, 0, 0, 0.70);*/
+	background: #121212;
+	position: fixed;
+	height: 90px;
+	display: inline-flex;
+	width: 100%;
+	justify-content: space-between;
+	align-items: center;
+	z-index: 1000;
+	box-shadow: 1px 6px 19px -2px rgba(0,0,0,0.64);
+	-webkit-box-shadow: 1px 6px 19px -2px rgba(0,0,0,0.64);
+	-moz-box-shadow: 1px 6px 19px -2px rgba(0,0,0,0.64);
+}
+
+
+.main-container {
+/*    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;*/
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 50px;
+  background-color: #191919;
+  width: 100%;
+  min-width: 60%;
+  min-height: 90px;
+  align-items: flex-start;
+  position: relative;
+}
+
+#logo {
+/*	width: 50%;
+	float: left;
+	margin: 0 auto;
+*/
+}
+
+#logo img{
+	width: 100px;
+	height:80px;
+}
+
+#top-right {
+	width: 40%;
+	float: right;
+	margin-top: 10px;
+}
+
+/*.nav {
+	justify-content: flex-start;
+	display: flex;
+	align-items: flex-start;
+	gap: 15px;
+	padding-top: 15px;
+}*/
+
+.nav-home {
+	justify-content: flex-end;
+	display: flex;
+	align-items: flex-start;
+	gap: 20px;
+	padding-top: 20px;
+}
+
+
+ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+}
+
+ul li {
+	display: inline; /* Display list items horizontally */
+    margin-right: 15px; /* Add spacing between list items */
+	text-align:right;
+	min-width: 80px
+}
+
+li a {
+	text-decoration: none !important;
+	color: #9D9D9D;
+	font-family: Inter;
+	font-size: 15px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: normal;
+	background: none !important;
+	padding: 0 !important;
+}
+
+/* Change the link color to #111 (black) on hover */
+li a:hover {
+	color: #FFF;
+}
+
+
+li a:active {
+	color: #FFF;
+}
+
+.container-home {
+/*    height: 750px;*/
+    background-color: #292727; /* Set background color instead of an image */
+    background-size: cover;
+    padding: 66px 0; /* Create a gap using padding */
+    text-align: left; /* Align the items to the left (start) */
+}
+
+
+
+.mySlides {display: none}
+.postercontainer img {
+	vertical-align: middle;
+	height:80%;
+}
+
+/* Slideshow container */
+.postercontainer {
+  max-width: 100%;
+  position: relative;
+  margin: auto;
+  overflow: hidden;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: 30px;
+  height:30px;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 10px;
+  border-radius: 3px 0 0 3px;
+
+}
+
+.prev {
+  left: 10px;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* Caption text */
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 10px;
+  width: 10px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active .dot:hover {
+  background-color: #FFF;
+}
+
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+#footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding: 30px 100px;
+  position: relative;
+  background-color: #000000;
+  bottom:0;
+}
+
+.footercontent {
+  align-items: flex-start;
+  gap: 30px;
+  display: inline-flex;
+  position: relative;
+  flex: 0 0 auto;
+  justify-content:  space-between; /* Add this line to align items at the top */
+}
+
+.footersection1 {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+  display: inline-flex;
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.footerLabel {
+  position: relative;
+  width: fit-content;
+  margin-top: -1px;
+  font-family: "Inter-Medium", Helvetica;
+  font-weight: 500;
+  color: #B15EFF;
+  font-size: 15px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.footerdesc {
+  position: relative;
+  width: 280px;
+  font-family: "Inter-Regular", Helvetica;
+  font-weight: 400;
+  color: #FFF;
+  font-size: 13px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.footersectionmid {
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  display: inline-flex;
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.footersecion1,.footersectionmid,.footersection2{
+	flex-direction: column;
+	gap: 20px;
+	display: inline-flex;
+	position: relative;
+	flex: 0 0 auto;
+  	align-items: flex-start; /* Add this line to align items at the top */
+	
+}
+
+.footersection1,
+.footersectionmid p.footerdesc {
+  margin: 0; /* Remove margin for footerdesc within footersection1 and footersectionmid */
+}
+
+.footersection1 {
+	align-items: flex-start;
+	text-align: left;
+}
+
+.footersectionmid {
+	align-items: center;
+	gap: 20px; /* Add gap to create spacing between items */
+	display: inline-flex; /* Keep as inline-flex */
+	position: relative;
+	flex: 0 0 auto;
+	padding: 0; /* Remove padding */
+}
+
+
+
+.footersectionmid1{
+  align-items: flex-start;
+  justify-content: center;
+  display: inline-flex;
+  gap: 20px;
+  position: relative;
+  flex: 0 0 auto;
+  width: 280px;
+}
+
+.footersectioncol{
+  flex-direction: column;
+  align-items: center;
+  display: inline-flex;
+  gap: 20px;
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.footerdesc1{
+  position: relative;
+  width: 100px;
+  font-family: "Inter-Regular", Helvetica;
+  font-weight: 400;
+  color: #FFF;
+  font-size: 13px;
+  letter-spacing: 0;
+  line-height: normal;	
+}
+
+
+
+.footersection2 {
+	align-items: flex-end;
+	text-align: right;
+}
+
+#footer a{
+	text-decoration: none;
+	color:#FFF;
+}
+
+.socials {
+  align-items: flex-start;
+  justify-content: flex-end;
+  gap: 20px;
+  display: inline-flex;
+  flex: 0 0 auto;
+  position: relative;
+  width: 30px;
+  height: 30px;
+}
+
+hr {
+	border: 1px solid #262626;
+	width:100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.copyright {
+  position: relative;
+  font-family: "Inter-Regular", Helvetica;
+  font-weight: 400;
+  color: #f2f2f2;
+  font-size: 10px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+
+
+
+#movies{
+    width: 80%;
+    margin: 0 auto; /* Center the container */
+	margin-top: 50px;
+    padding: 0 20px; /* Add margin to the left and right sides */
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+}
+
+
+#listingrow {
+	border-style: none;
+	display: flex;
+	justify-content: flex-start;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+#listings {
+	padding: 30px;
+}
+
+
+.poster-cont{
+	position: relative;
+	width: 220px; /* Set the width to match the image width */
+	height: 350px; /* Set the height to match the image height */
+	overflow: hidden;
+	transition: .5s ease;
+}
+
+.poster-cont img{
+	width: 100%;
+	height: 100%;
+	opacity: 1;
+	display: block;
+	transition: .5s ease;
+	backface-visibility: hidden;
+}
+
+.poster-cont .middle{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: rgba(0, 0, 0, 0.7);
+	opacity: 0;
+	transition: .5s ease;
+}
+
+
+.poster-cont:hover img {
+	opacity: 1;
+}
+
+.poster-cont:hover .middle {
+	opacity: 0.7;
+}
+
+
+.moviecontent{
+	background-color: #292727;
+	width: 100%;
+}
+
+
+.moviecontent .framemovie {
+	background-color: #292727;
+	width: 220px;
+	height: 350px;
+}
+
+.framemovie .div {
+  gap: 9px;
+  top: 210px;
+  left: 15px;
+  width: 180px;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: relative;
+}
+
+.framemovie .movielab {
+  position: relative;
+  width: fit-content;
+  margin-top: -1px;
+  font-family: "Inter-SemiBold", Helvetica;
+  font-weight: 600;
+  color: #FFF;
+  font-size: 17px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.framemovie .div-2 {
+  gap: 5px;
+  flex: 0 0 auto;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: relative;
+}
+
+.framemovie .descriptions {
+  position: relative;
+  width: fit-content;
+  font-family: "Inter-Medium", Helvetica;
+  font-weight: 500;
+  color: #fff;
+  font-size: 12px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.book-now-btn {
+	width: 180px;  	
+	border-radius: 10px;
+	background: #FFA33C;
+	display: flex;
+	padding: 10px 20px;
+	justify-content: center;
+	align-items: center;
+	gap: 10px;
+  	border: 1px solid transparent;
+
+}
+
+.book-now-btn:hover {
+	background: transparent;
+  	border: 1px solid #FFA33C;
+  	color: #FFA33C;
+/*  	box-shadow: 0 2px 15px #A38BD2;*/
+
+}
+
+#labelhead{
+	text-align: left;
+	color: #B15EFF;
+	font-size: 35px;
+	font-family: 'Inter', sans-serif;
+	font-family: 500;
+}
+
+
+#login {
+	margin-top: 80px;
+	display: flex;
+	flex-direction: column;	align-items: center;
+	position: relative;
+	min-height: 500px;
+}
+
+#login form{
+	display: flex;
+	gap: 40px;
+	flex-direction: column;
+}
+
+#login .div {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  position: relative;
+  flex: 0 0 auto;
+}
+
+
+
+#login .loginlabel {
+  position: relative;
+  width: fit-content;
+  margin-top: -1px;
+  font-family: "Inter-Bold", Helvetica;
+  font-weight: 700;
+  color: #b15eff;
+  font-size: 40px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+#login .div-2 {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 30px;
+  position: relative;
+  flex: 0 0 auto;
+}
+
+#login .div-wrapper{
+	display: flex;
+	align-items: center;
+	width: 100%; /* Adjust the width to 100% */
+	gap: 5px;
+	flex-direction: column;
+}
+
+#memName, #memEmail, #memHp, #memCard, #memPassword, #confirmPassword {
+	background: transparent; 
+	border: 2px solid;
+	border-radius: 25px;
+	border-color: #a38bd2;
+	padding: 10px 20px; /* Adjust the padding */
+	color: #FFF;
+	font-family: "Inter", sans-serif;
+	font-size: 20px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: normal;
+	width: 500px; /* Set the width to 100% */
+	height: 60px; /* Adjust the height */
+}
+
+input[type=text]::placeholder, input[type=email]::placeholder, input[type=password]::placeholder{
+	color: #96999B !important;
+	font-family: "Inter", sans-serif;
+	font-size: 16px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: normal;
+}
+
+input:focus {
+	border: 2px solid #B15EFF;
+}
+
+::placeholder {
+	color: #96999B !important;
+	font-family: "Inter", sans-serif;
+	font-size: 16px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: normal;
+}
+
+
+#login .div-3 {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.div-5{
+	display: inline-flex;
+	flex-direction: row;
+	gap: 10%;  
+	align-items: center;
+	position: relative;
+	flex: 0 0 auto;
+	justify-content: center;	
+	padding: 20px;
+}
+
+#login .div-4 {
+	padding:0;
+	margin: 0 auto;
+	display: inline-flex;
+	flex-direction: column;
+	align-items: center;
+	position: relative;
+	flex: 0 0 auto;
+	margin-bottom: 50px;
+}
+
+#login .submitbutton {
+	display: flex;
+	width: 200px;
+	align-items: center;
+	justify-content: center;
+	gap: 15.4px;
+	padding: 10px 20px;
+	position: relative;
+	flex: 0 0 auto;
+	background-color: #ffa33c;
+	border-radius: 20px;
+	overflow: hidden;
+	font-size: 20px;
+	font-family: "Inter-SemiBold", Helvetica;
+	font-weight: 600;
+	border: 1px solid transparent;
+	color: #FFF;
+
+}
+
+ #login .reset {
+	display: flex;
+	width: 200px;
+	align-items: center;
+	justify-content: center;
+	gap: 15.4px;
+	padding: 10px 20px;
+	position: relative;
+	flex: 0 0 auto;
+	background-color: transparent;
+	border-radius: 20px;
+	overflow: hidden;
+	font-size: 20px;
+	font-family: "Inter-SemiBold", Helvetica;
+	font-weight: 600;
+	border: 1px solid #ffa33c;
+	color: #ffa33c;
+
+}
+
+ #login .cancelbutton {
+	display: flex;
+	width: 200px;
+	align-items: center;
+	justify-content: center;
+	gap: 15.4px;
+	padding: 10px 20px;
+	position: relative;
+	flex: 0 0 auto;
+	background-color: transparent;
+	border-radius: 20px;
+	overflow: hidden;
+	font-size: 20px;
+	font-family: "Inter-SemiBold", Helvetica;
+	font-weight: 600;
+	border: 1px solid #ffa33c;
+	color: #ffa33c;
+
+}
+
+#login .submitbutton:hover {
+	background: transparent;
+  	border: 1px solid #FFA33C;
+  	color: #FFA33C;
+}
+
+#login .reset:hover {
+	background: #FFA33C;
+  	border: 1px solid transparent;
+  	color: #FFF;	
+}
+#login .cancelbutton:hover {
+	background: #FFA33C;
+  	border: 1px solid transparent;
+  	color: #FFF;	
+}
+
+.smalllabel {
+  position: relative;
+  width: fit-content;
+  font-family: "Inter-Regular", Helvetica;
+  font-weight: 400;
+  color: #b15eff;
+  font-size: 15px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.regdesc {
+	padding:0;
+	position: relative;
+	width: fit-content;
+	font-family: "Inter-Regular", Helvetica;
+	font-weight: 400;
+	color: #FFF;
+	font-size: 15px;
+	letter-spacing: 0;
+	line-height: normal;
+	white-space: nowrap;
+	text-align: center;
+}
+
+.errormsg{
+	position: relative;
+/*	width: fit-content;*/
+	inline-size: 500px;
+  overflow-wrap: break-word;
+	font-family: "Inter-Medium", Helvetica;
+	font-weight: 500;
+	color:#e04b5a; 
+	font-size: 12px;
+	letter-spacing: 0;
+	line-height: normal;
+/*	white-space: nowrap;	*/
+	margin:0;
+	margin-left:20px;
+	text-align: left;		
+}
